@@ -1,0 +1,96 @@
+% This is the alpha version of lab report template in LaTeX.
+% Originally used by Daniel Whisman (enrolled in ECE 486, Fall 2013)
+% Edited and redesigned by Y\"un L. Han.
+% 2014-09-07
+
+% It is recommended to use 
+%
+% TeXLive under Linux, url: http://tug.org/texlive/
+% MacTex under Mac OS X, url: http://tug.org/mactex/
+% MikTeX under Windows, url: http://miktex.org/
+
+% For more info about how to use LaTeX (not TeX, TeX is a programming
+% language, however LaTeX is not), see a quick guide from ECE Thesis wiki,
+
+% https://wiki.cites.illinois.edu/wiki/display/ECEThesisReview/LaTeX+Resources
+
+% Read the Documentation file ECE LaTeX Guide.pdf down at the bottom 
+% of the page. As a starter, you only have to learn briefly how to typeset 
+% equations and insert figures and other graphics. As an experienced user,
+% however, you can grab the template and write your report immediately.
+
+\documentclass{article}
+% \usepackage{graphicx}
+% \usepackage{caption}
+\usepackage{mathtools} % load AMS maths
+\usepackage{amsmath}  % for math spacing
+\usepackage{amssymb}  % for math spacing
+\newcommand{\score}{\hfill \underline{\hspace{0.65cm}}\,/} % for score underline
+\newcommand\RR{\textsuperscript{\textregistered}~} % for registered mark
+\title{\bf Lab \#1 Report\\{\sc Simulation Using the Analog Computer}}
+\author{Your Name\\ Section AB\emph{X}\\
+  Your Lab Partner's Name\\
+  Your TA's name}
+\begin{document}
+\maketitle
+\noindent \fbox{\bf \Large Total: \underline{\hspace{0.65cm}}\,/40}
+\section*{Question 1 \score 15}
+\subsection*{Theoretical and Experimental Results \score 5}
+\begin{table}[phtb] \label{tbl:lab1_q1}
+  \begin{center}
+    \caption{Theoretical and Experimental Results}
+    \begin{tabular}{c|rr|rr|rr} \hline \hline
+      & \multicolumn{2}{c}{$M_p$ (\%)} & \multicolumn{2}{c}{$t_p$ (s)} & \multicolumn{2}{c}{$t_s$ (s)} \\ \cline{2-7} % horizontal line spanning across specified columns
+      $\zeta$ & Theory & Experiment & Theory & Experiment & Theory & Experiment \\
+      \hline
+      2.0 & &&&&&\\ 
+      1.5 & &&&&&\\
+      1.0 & &&&&&\\
+      0.8 & &&&&&\\
+      0.7 & &&&&&\\
+      0.5 & &&&&&\\
+      0.3 & &&&&&\\
+      0.2 & &&&&& \\ \hline 
+    \end{tabular} 
+    \end{center}
+\end{table}
+\subsection*{Comparison of Theoretical/Experimental Results \score 5}
+% add your discussion here 
+
+\subsection*{Discussion of Variation of $\zeta$ with $M_p$, $t_r$, and $t_s$ \score 5}
+% add your discussion here
+% for example
+(As $\zeta$ decreases, how does $M_p$ change? As $\zeta$ decreases, how about $t_r$ and $t_s$?)
+
+\section*{Question 2 \score 15}
+
+\subsection*{Effect of $\zeta$ on Pole Locations \score 5}
+(Solve for poles in terms of $\zeta$ and sketch a plot of trajectory of pole locations [you can use {\sc Matlab\RR}] when $\zeta$ varies.)
+% add your discussion here
+
+\subsection*{Effect of Pole Locations on $M_p$, $t_r$, and $t_s$ for an Underdamped System \score 5}
+(What is the value of $\zeta$ when a system is \emph{underdamped}? As $\zeta$ increases, what happens to $M_p$, $t_r$, and $t_s$?)
+% add your discussion here
+
+\subsection*{Effect of Pole Locations on $M_p$, $t_r$, and $t_s$ for an Overdamped/Critically Damped System \score 5}
+(What is the value of $\zeta$ when a system is \emph{overdamped}? \emph{Critically damped}? And as $\zeta$ increases, what happens to $M_p$, $t_r$, and $t_s$?)
+% add your discussion here
+
+\section*{Question 3 \score 10}
+
+\subsection*{Comparison of $2^{\rm nd}$ Order System with $1^{\rm st}$ Order System with Dominant Pole \score 6}
+(What are the similarities/differences between the response of an overdamped $2^{\rm nd}$ order system to the response of a $1^{\rm st}$ order system with the \emph{dominant} (less negative, closer to the origin) pole of the $2^{\rm nd}$ order's poles?)
+% add your discussion here
+
+\subsection*{Effect of $\zeta$ on Accuracy of Approximation \score 4}
+(What is the effect of magnitude of $\zeta$ on the accuracy of the approximations? Also include your graphs.)
+% add your discussion here
+\newline \\[10mm]
+\noindent {\bf \large Attachments}
+\begin{itemize}
+\item Plots obtained during lab
+\item Sample response with relevant points for calculating $M_p$ , $t_s$ and $t_r$ marked
+\item Step responses comparing $2^{\rm nd}$ order systems and $1^{\rm st}$ order approximations
+\end{itemize}
+
+\end{document}
