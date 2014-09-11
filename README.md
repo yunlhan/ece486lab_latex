@@ -1,4 +1,4 @@
-#ECE 486 Control System Lab
+#ECE 486 Control Systems Lab
 
 *NEW for Fall 2014*
 
@@ -18,5 +18,5 @@ For more info about how to use LaTeX (not TeX, TeX is a programming language, ho
 
 > https://wiki.cites.illinois.wiki/display/ECEThesisReview/LaTeX+Resources
 
-Read the Documentation file ECE LaTeX Guide.pdf down at the bottom of the page. As a starter, you only have to learn briefly how to typeset equations and insert figures and other graphics. As an experienced user, however, you can grab the template and write your report immediately.
+Read the Documentation file ECE LaTeX Guide.pdf down at the bottom of the page. As a starter, you only have to learn briefly how to typeset equations and insert figures. As an experienced user, however, you can grab the template and write your report immediately.
 
