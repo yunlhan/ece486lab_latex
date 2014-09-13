@@ -1,0 +1,160 @@
+% This is the alpha version of lab report template in LaTeX.
+% Originally used by Daniel Whisman (enrolled in ECE 486, Fall 2013)
+% Edited and redesigned by Y\"un L. Han.
+% 2014-09-12
+
+% It is recommended to use 
+%
+% TeXLive under Linux, url: http://tug.org/texlive/
+% MacTex under Mac OS X, url: http://tug.org/mactex/
+% MikTeX under Windows, url: http://miktex.org/
+
+% For more info about how to use LaTeX (not TeX, TeX is a programming
+% language, however LaTeX is not), see a quick guide from ECE Thesis wiki,
+
+% https://wiki.cites.illinois.edu/wiki/display/ECEThesisReview/LaTeX+Resources
+
+% Read the Documentation file ECE LaTeX Guide.pdf down at the bottom 
+% of the page. As a starter, you only have to learn briefly how to typeset 
+% equations and insert figures and other graphics. As an experienced user,
+% however, you can grab the template and write your report immediately.
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{mathtools} % load AMS maths
+\usepackage{amsmath}  % for math spacing
+\usepackage{amssymb}  % for math spacing
+\usepackage{colortbl} % colour for table
+\usepackage{xcolor} % define colours
+\usepackage{multirow}
+\definecolor{Grey}{gray}{0.85}
+
+\newcommand{\score}{\hfill \underline{\hspace{0.65cm}}\,/} % for score underline
+\newcommand\RR{\textsuperscript{\textregistered}~} % for registered mark
+\title{\bf Lab \#2 Report\\{\sc Digital Simulation}}
+\author{Your Name\\ Section AB\emph{X}\\
+  Your Lab Partner's Name\\
+  Your TA's name}
+\begin{document}
+\maketitle
+\noindent \fbox{\bf \Large Total: \underline{\hspace{0.65cm}}\,/50}
+\section{{\sc State Space Model of} $H_1(s)$\score 8}
+(Compare the plots of \verb|y_dot| and \verb|y| obtained in Part 1 of the lab with the plots previously made for the prelab. Why are they identical? Attach plots---if your prelab plot was wrong, fix it and attach the corrected plot.)
+% add your discussion here
+
+% the following are templates for two FIGURES
+\noindent The plots of $y$ and $\dot{y}$ from the prelab and lab are shown in Figures~\ref{fig:prelab2} and~\ref{fig:lab2}.
+
+% uncomment the following to insert your OWN figures
+% \begin{figure}[htbp]
+% \centering
+% \includegraphics[width=0.88\linewidth]{prelab/prelab2_step.png}
+% \caption{Plots of $y$ and $\dot{y}$, from the prelab, for a step input.}
+% \label{fig:prelab2}
+% \end{figure}
+
+% \begin{figure}[htbp]
+% \centering
+% \includegraphics[width=0.88\linewidth]{lab2_step.png}
+% \caption{Plots of $y$ and $\dot{y}$, from the lab, for a step input.}
+% \label{fig:lab2}
+% \end{figure}
+
+\section{{\sc Effects of an extra Zero}\score 22}
+% attach the figure in lab 2 of step responses after adding a zero
+The step responses after adding an extra zero are shown in Figure~\ref{fig:effect_zeros}.
+% \begin{figure}[htbp]
+% \centering
+% \includegraphics[width=0.84\linewidth]{zero_added.png}
+% \caption{Effects of an extra zero on the step response.}
+% \label{fig:effect_zeros}
+% \end{figure}
+
+
+\subsection{Effects of a Zero on $M_p$, $t_r$, and $t_s$\score 2}
+Fill the table of specs of time responses.
+% also attach a sample figure showing how you calculate the specs of the step responses [using your lab 0 script]
+
+\begin{table}[phtb]\footnotesize \label{tbl:lab2_q2}
+\begin{center}
+\caption{Effects of Zero}
+\begin{tabular}{c|c|c|c|c|c|c} \hline \hline
+\rowcolor{Grey} & No zero & $H_2(s)$ zero &  $H_2(s)$ zero &  $H_2(s)$ zero  &  $H_2(s)$ zero &  $H_2(s)$ zero \\
+\rowcolor{Grey} Specs & $H_1(s)$ & at $s = -30$ & at $s = -3$ &  at $s = -1.5$ &   at $s = 1.8$ &   at $s = 18$ \\ \hline
+$M_p$ &  &  &  &  &  &  \\ \hline
+$t_r$ &  &  &  &  &  &  \\ \hline
+$t_s$ &  &  &  &  &  & \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Discuss the Effects of a LHP Zero\score 4}
+(Explain how $M_p$ , $t_r$ , and $t_s$ are affected by the zero location. When can the zero be ignored?)
+% add your discussion here
+
+\subsection{Effects of a Non-minimum Phase Zero\score 2}
+(What is unique in this situation?)
+% add your discussion here
+
+\subsection{Decomposition of $H_2(s)$\score 14}
+(Take $H_2(s)$, set $\zeta$ to the value found in the prelab, separate the numerator into two terms so that $H_2(s)$ is a sum of 2 fractions. Discuss how this decomposition helps to explain the effect of the zero location. In particular, discuss what each term represents. Also discuss $\alpha$'s effect. Which term dominates as $\alpha$ approaches 0? As $\alpha$approaches $\infty$?  What happens when $\alpha$ is negative?)
+
+\begin{align*}
+H_2(s) &=\frac{25 \left( 1+\frac{s}{\alpha \zeta} \right)}{s^2+10\zeta s +25}\\
+       &= \mbox{\sc insert fraction 1} + \mbox{\sc insert fraction 2}
+\end{align*}
+% complete the above decomposition and add your discussion here
+
+\section{{\sc Effects of an extra Pole}\score 20}
+% attach the figure in lab 2 of step responses after adding a pole
+The step responses after adding an extra pole are shown in Figure~\ref{fig:effect_pole}.
+% uncomment the following to insert your OWN figure
+% \begin{figure}[htbp]
+% \centering
+% \includegraphics[width=0.88\linewidth]{pole_added.png}
+% \caption{Effects of an extra pole on the step response.}
+% \label{epole}
+% \end{figure}
+
+\subsection{Effects of a Pole on $M_p$, $t_r$, and $t_s$\score 2}
+(Fill the table of specs of time responses.)
+\begin{table}[phtb] \label{tbl:lab2_q3}
+\begin{center}
+\caption{Effects of Pole}
+\begin{tabular}{c|c|c|c|c} \hline \hline
+\rowcolor{Grey} & No pole & $H_2(s)$ pole & $H_2(s)$ pole & $H_2(s)$ pole \\
+\rowcolor{Grey} Specs &  $H_1(s)$ &  at $s = -30$ &  at $s = -3$ & at $s = -1.5$ \\ \hline   
+$M_p$ &  &  &  &  \\ \hline
+$t_r$ &  &  &  &  \\ \hline
+$t_s$ &  &  &  &  \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Discuss the Effects of an Extra Pole\score 4}
+(Explain how $M_p$ , $t_r$ , and $t_s$ are affected by the location of the additional pole. When can the extra pole be ignored?)
+% add your discussion here
+
+\subsection{Decomposition of $H_3(s)$\score 14}
+\begin{align*}
+H_3(s) &= \frac{25}{\left(1+\frac{s}{\alpha \zeta}\right)\left( s^2 + 10 \zeta s + 25\right) } \mbox{~~~($\zeta = 0.6$)} \\
+&= \frac{k_1}{1+\frac{5s}{3\alpha}} + \frac{k_2 s}{s^2+6s+25} + \frac{k_3}{s^2+6s+25}
+\end{align*}
+Using a partial fraction expansion,
+\begin{align*}
+k_1 &= \mbox{\sc insert expression for $k_1$}\\
+k_2 &= \mbox{\sc insert expression for $k_2$}\\
+k_3 &= \mbox{\sc insert expression for $k_3$}
+\end{align*}
+(Discuss how this decomposition helps to explain the effect of the location of an additional pole. In particular, discuss what each term represents. Also discuss $\alpha$'s effect. Which term dominates as $\alpha$ approaches 0? As $\alpha$ approaches $\infty$?)
+% add your discussions about the above decomposition
+\newline \\[10mm]
+\noindent {\bf \large Attachments}
+\begin{itemize}
+\item Plot from the prelab
+\item Plots of overlaid step responses after adding a zero; and after adding a pole
+\item Sample figures for calculating $M_p$ , $t_s$ and $t_r$ in Table~\ref{tbl:lab2_q2} and Table~\ref{tbl:lab2_q3}
+\end{itemize}
+
+\end{document}
