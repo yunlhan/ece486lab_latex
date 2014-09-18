@@ -1,0 +1,124 @@
+% This is the alpha version of lab report template in LaTeX.
+% Originally used by Daniel Whisman (enrolled in ECE 486, Fall 2013)
+% Edited and redesigned by Y\"un L. Han.
+% 2014-09-16
+
+% It is recommended to use
+%
+% TeXLive under Linux, url: http://tug.org/texlive/
+% MacTex under Mac OS X, url: http://tug.org/mactex/
+% MikTeX under Windows, url: http://miktex.org/
+% For more info about how to use LaTeX (not TeX, TeX is a programming
+% language, however LaTeX is not), see a quick guide from ECE Thesis wiki,
+% https://wiki.cites.illinois.edu/wiki/display/ECEThesisReview/LaTeX+Resources
+% Read the Documentation file ECE LaTeX Guide.pdf down at the bottom
+% of the page. As a starter, you only have to learn briefly how to typeset
+% equations and insert figures and other graphics. As an experienced user,
+% however, you can grab the template and write your report immediately.
+
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{mathtools} % load AMS maths
+\usepackage{amsmath} % for math spacing
+\usepackage{amssymb} % for math spacing
+\usepackage{colortbl} % colour for table
+\usepackage[table]{xcolor} % define colours
+\usepackage{multirow} % multirow cell in table
+\usepackage{array} % table cell, paragraph column aligned in the middle
+\definecolor{Grey}{gray}{0.85}
+\newcommand{\score}{\hfill \underline{\hspace{0.65cm}}\,/} % for score underline
+\newcommand\RR{\textsuperscript{\textregistered}~} % for registered mark
+\title{\bf Lab \#3 Report\\{\sc Digital Simulation of \\ a Closed Loop System}}
+\author{Your Name\\ Section AB\emph{X}\\
+Your Lab Partner's Name\\
+Your TA's name}
+\begin{document}
+\maketitle
+\noindent \fbox{\bf \Large Total: \underline{\hspace{0.65cm}}\,/45}
+\section{{\sc Results}\score 15}
+\subsection{Plots \score 6}
+% insert two figures you obtained in lab 3
+See Figures~\ref{ref_resp} and~\ref{dist_resp} for the responses to a unit step as the reference and disturbance, respectively.
+% uncomment the following to insert your figures
+% \begin{figure}[phtb]
+% \centering
+% \includegraphics[widith=0.88\textwidth]{response_ref}
+% \caption{Response of three controllers due to unit step reference.}
+% \label{fig:response_ref}
+% \end{figure}
+
+% \begin{figure}[phtb]
+% \centering
+% \includegraphics[width=0.88\textwidth]{response_dist}
+% \caption{Response of three controllers due to unit disturbance.}
+% \label{fig:response_dist}
+% \end{figure}
+
+\subsection{Step Response to $\omega_r$ \score 6}
+\begin{table}[phtb]\footnotesize \label{tbl:lab3_q1}
+% http://texblog.org/2014/05/19/coloring-multi-row-tables-in-latex/
+\begin{center}
+\caption{Time Response to a Unit Step for $\omega_r$}
+\begin{tabular}{c|m{.85cm}|m{.85cm}|m{.85cm}|m{.85cm}|m{.85cm}|m{.85cm}} \hline \hline
+\cellcolor{lightgray} & \multicolumn{2}{c|}{\cellcolor{lightgray}Controller 1} & \multicolumn{2}{c|}{\cellcolor{lightgray}Controller 2}  & \multicolumn{2}{c}{\cellcolor{lightgray}Controller 3}  \\ \cline{2-7}
+\multirow{-2}{*}{\cellcolor{lightgray}parameters}& Prelab & ~~Lab & Prelab & ~~Lab & Prelab &~~Lab \\ \hline
+$M_p$\,[\%] & & & & & & \\ \hline
+$t_r$\,[s] & & & & & & \\ \hline
+$t_s$\,[s] & & & & & & \\ \hline
+$K$  &\multicolumn{2}{c|}{}&\multicolumn{2}{c|}{}&\multicolumn{2}{c}{} \\ \hline
+$K_r$  &\multicolumn{2}{c|}{}&\multicolumn{2}{c|}{}&\multicolumn{2}{c}{} \\ \hline
+$K_d$  &\multicolumn{2}{c|}{}&\multicolumn{2}{c|}{}&\multicolumn{2}{c}{} \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Comparison \score 3}
+[Compare $M_p$, $t_r$ and $t_s$ from Prelab with those from Lab. Are they close to each other? Which controllers met the specifications? ]
+
+\section{{\sc Deriving $e_{ss}$ Components} \score 12}
+[For the system in Figure 3.1 (in Lab Manual), derive the relationship between steady state error ($e_{\rm ss}= \omega_r - \omega$) and natural frequency $\omega_n$. Consider the error as a function of both $\omega_r$ and $\tau_d$, and model these as step inputs. Since the system is linear, superposition allows the two components to be calculated separately and then summed. Notice that $e_{\rm ss}$ is not the same thing as ``e'' in the block diagram ($e= K_r\omega_r - \omega$, this is the error signal).]
+\begin{align*}
+  \omega_n^2 & = \mbox{\sc as an expression of $K$} \\
+  \omega_r(s) - \omega(s) & = \mbox{\sc as an expression of $\omega_r$ and $\tau_d$}
+\end{align*}
+\emph{Hint}: Using the Final Value Theorem, solve the following subproblems:
+\begin{itemize}
+\item What is $e_{\rm ss}$ due to a step in $\omega_r$ ($\tau_d = 0$)? In order to minimize this error component, what value of $\omega_n$ should we choose?
+\item What is $e_{\rm ss}$ due to a step in $\tau_d$ ($\omega_r = 0$)? In order to minimize this error component, what value of $\omega_n$ should we choose?
+\end{itemize}
+% add your discussion here
+
+\section{{\sc $\zeta$ and $\omega_n$ in Controller Three} \score 18}
+\subsection{Write down the expressions of $\zeta$ and $\omega_n$ \score 12}
+[For controller 3, derive the relationship between $\zeta$, $\omega_n$ and the gains $K$ and $K_d$.]
+\begin{align*}
+\zeta & = \mbox{\sc as an expression of $K$ and $K_d$} \\  
+\omega_n & = \mbox{\sc as an expression of $K$ and $K_d$}  
+\end{align*}
+\emph{Hint:} If we increase $K$, what happens to $\zeta$ and $\omega_n$? (and at what rate does $\zeta$ change (\emph{linearly, exponentially, as $K^2$} etc)? How does $\omega_n$ change?) What if we increase $K_d$? What happens to $\zeta$ and $\omega_n$?
+% add your discussion here
+
+\subsection{Using these equations, show how the pole locations change as $K_d >0$ increases in value \score 6}
+\[
+    \mbox{Poles}~~s_{1,2} = \mbox{\sc as an expression of $\zeta$ and $\omega_n$}
+\]
+[As $K_d$ increases, what is the trajectory of poles? Again, you can use {\sc Matlab}\RR to sketch a plot.]
+% add your discussion here
+% uncomment the following to insert your figure
+% \begin{figure}[phtb]
+% \centering
+% \includegraphics[height=0.88\textheight]{pole_traj}
+% \caption{Pole locations for $0 < K_d < {\rm value}$.}
+% \label{fig:pole_traj}
+% \end{figure}
+\newline \\[3mm]
+\noindent {\bf \large Attachments}
+\begin{itemize}
+\item Plots obtained during lab
+\item Sample response with relevant points for calculating $M_p$ , $t_s$ and $t_r$ marked
+\item Trajectory of poles when $K_d$ varies 
+\end{itemize}
+
+\end{document}
