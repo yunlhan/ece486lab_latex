@@ -1,7 +1,11 @@
 *~
 *.aux
 *.log
+
 *.pdf
+!H3DecomposeMaple.pdf
+!H3DecomposeMathematica.pdf
+
 *.html
 *.gz
 *.fdb_latexmk
