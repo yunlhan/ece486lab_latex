@@ -30,9 +30,207 @@
 \usepackage{multirow} % multirow cell in table
 \usepackage{array} % table cell, paragraph column aligned in the middle
 \usepackage[margin=2.5cm]{geometry} % an easy way to change page layout, Thanks to Brady Salz 
+\usepackage{siunitx} % use this package to enter SI units, Thanks to Dr. Sean Hubbard
 \definecolor{Grey}{gray}{0.85}
 \newcommand{\score}{\hfill \underline{\hspace{0.65cm}}\,/} % for score underline
 \newcommand\RR{\textsuperscript{\textregistered}~} % for registered mark
 \begin{document}
+\title{\bf Lab \#4 Report\\{\sc Introduction to the DC Motor}}
+\author{Your Name\\ Section AB\emph{X}\\
+Your Lab Partner's Name\\
+Your TA's name}
+\maketitle
+\section{Calibration of Tachometer \score 5}
+\subsection{Computing the Tachometer Gain \score 3}
+(Briefly explain the procedure and the importance of computing the gain for the Tachometer. Why is it important to know $K_{\rm tach}$?)
+% add your discussion here
+
+\subsection{Experimental Parameters for the Tachometer \score 2}
+\begin{table}[phtb] \label{tbl:lab4_q1}
+\begin{center}
+\caption{Measurement of $K_{\rm tach}$}
+\begin{tabular}{c|r|r|r|r} \hline \hline 
+\cellcolor{lightgray} $V_i$ (\si{\volt}) & \cellcolor{lightgray} $\Delta t$ (\si{\milli\second}) & \cellcolor{lightgray} $V_{\rm tach}$ (\si{V}) & \cellcolor{lightgray} $\omega$ (\si{\radian\per\second}) & \cellcolor{lightgray} $K_{\rm tach}$ (\si{\volt\second\per\radian}) \\
+\hline
+5  &  &  &  &  \\ \hline
+10 &  &  &  &  \\ \hline
+15 &  &  &  &  \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+The average value of $K_{\rm tach}$ is YOUR VALUE \si{\volt\second\per\radian}.
+
+\section{Armature Resistance and Back-EMF \score 10}
+\subsection{Measuring the $R_a$ and Back-EMF \score 4}
+(Explain the procedure for obtaining the Armature Resistance and the torque gain ($K_v = K_{\tau}$). Why can we ignore $L_a$?)
+% add your discussion here
+
+\subsection{Experimental Values \score 2}
+\begin{table}[phtb] \label{tbl:lab4_q2_1}
+\begin{center}
+\caption{Experimental values in Question 2}
+\begin{tabular}{c|r|r|r} \hline \hline
+\cellcolor{lightgray} $V_i$ (\si{\volt}) & \cellcolor{lightgray} $I_{a_{\rm ss}}$ (\si{\ampere}) & \cellcolor{lightgray} $V_{\rm tach}$ (\si{\volt}) & \cellcolor{lightgray} $\omega_{\rm ss}$ (\si{\radian\per\second}) \\
+\hline
+5 &   &   &   \\ \hline
+6 &   &   &   \\ \hline
+7 &   &   &  \\ \hline
+8 &   &   &  \\ \hline
+9 &   &   &  \\ \hline
+10  &   &   &  \\ \hline
+11  &   &   &  \\ \hline
+12  &   &   &  \\ \hline
+-5  &   &   &  \\ \hline
+-6  &  &  &  \\ \hline
+-7  &  &  &   \\ \hline
+-8  &  &  &   \\ \hline
+-9  &  &  &   \\ \hline
+-10 &  &  &   \\ \hline
+-11 &  &  &   \\ \hline
+-12 &  &  & \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Experimental Parameters \score 4}
+\begin{table}[phtb] \label{tbl:lab4_q2_2}
+\begin{center}
+\caption{Experimental parameters in Question 2}
+\begin{tabular}{l|r} \hline \hline
+\cellcolor{lightgray} Parameter & \cellcolor{lightgray} Value \\
+\hline
+$R_a$ (\si{\ohm}) &  \\ \hline
+$K_V$ (\si{\volt\second\per\radian}) &  \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{Friction Coefficients \score 10}
+\subsection{Measuring the Coefficients \score 6}
+(Explain the procedure for obtaining the friction coefficients. Include the equations. Also plot the friction torque ($K_{\tau}I_a$) against $\omega$. Use a different plot for each direction and estimate the Coulomb and viscous coefficients by using a linear fit.) 
+% add your discussion here
+
+Plots of frictional torque vs. angular velocity are shown in Figures~\ref{fig:lab4_q3_pos} and~\ref{fig:lab4_q3_neg}.
+% uncomment out the following insert your own figure
+% \begin{figure}[phtb]
+% \centering
+% \includegraphics[width=0.9\textwidth]{lab4_q3_pos.eps}
+% \caption{Frictional torque vs. angular velocity for positive $\omega$.}
+% \label{fig:lab4_q3_pos}
+% \end{figure}
+ 
+% \begin{figure}[hptb]
+% \centering
+% \includegraphics[width=0.9\textwidth]{lab4_q3_neg.eps}
+% \caption{Frictional torque vs. angular velocity for negative $\omega$.}
+% \label{fig:lab4_q3_neg}
+% \end{figure}
+
+\subsection{Experimental Values \score 4}
+\begin{table}[phtb] \label{tbl:lab4_q3}
+\begin{center}
+\caption{Experimental values of $b$ and $c$}
+\begin{tabular}{lr|lr} \hline \hline
+\multicolumn{2}{m{2cm}|}{\cellcolor{lightgray} Viscous Coefficient (\si{\newton\meter\second\per\radian})} & \multicolumn{2}{m{2cm}}{\cellcolor{lightgray} Coulomb Coefficient (\si{\newton\meter})} \\
+\hline
+$b^+$ &  & $c^+$ &  \\ \hline
+$b^-$ &  & $c^-$ &  \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{Armature Inductance \score 20}
+\subsection{Procedure for Measuring $R_s$ and $L_a$ \score 14}
+(Explain the process of measuring both parameters. Explain how holding the motor still with the rotor-locking attachment allows us to more easily measure $L_a$. Include the equations (do not forget the logarithm fit). 
+Also include two plots. In the first plot, overlay the linear region for the six data sets obtained after using the logarithm function (without plotting the linear fit). Then, take one (just one, as an example) of these plots, and do a linear fit showing the equation.)
+% add your discussion here
+
+% uncomment out the following to insert your own figure
+% \begin{figure}[phtb]
+% \centering
+% \caption{Plot of linear fit (logarithm) of raw data $V_o(t)$ versus t}
+% \includegraphics[width=0.9\textwidth]{*.eps}
+% \label{fig:lab4_q4}
+% \end{figure}
+
+\subsection{Experimental Parameters \score 6}
+$R_s$ was measured to be YOUR VALUE \si{\ohm}.
+\begin{table}[phtb] \label{tbl:lab4_q4}
+\begin{center}
+\caption{Experimental parameter of $\tau_e$ and $L_a$}
+\begin{tabular}{c|r|r} \hline \hline
+\cellcolor{lightgray} Trial & \cellcolor{lightgray} $\tau_e$\,(\si{\milli\second}) & \cellcolor{lightgray} $L_a$\,(\si{\milli\henry}) \\
+\hline
+1 &  &  \\ \hline
+2 &  &  \\ \hline
+3 &  &  \\ \hline
+4 &  &  \\ \hline
+5 &  &  \\ \hline
+6 &  &  \\ \hline
+Average &  & \\\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{Rotor Moment of Inertia \score 18}
+\subsection{Procedure for Measuring $J$ \score 14}
+(Explain how to obtain $J$. Include the equations for estimating $J$ (use the natural logarithm function to obtain a linear relation between time and the angular velocity of the rotor). Also explain why we need to measure transient behavior to obtain $J$. Using the estimates found in part III, plot the linear region for the six sets of data on a single graph. Take one of these plots and do a linear fit showing the linear coefficients (i.e. an equation).)
+% add your discussion here
+
+A logarithmic plot of angular velocity in time and its linear fit is shown in Figure~\ref{fig:lab4_q5}.
+
+% uncomment out the following to insert your own figure
+% \begin{figure}[phtb]
+% \centering
+% \caption{Plot of linear fit (logarithm) of raw data $\omega(t)$ versus time}
+% \includegraphics[width=0.9\textwidth]{*.eps}
+% \label{fig:lab4_q5}
+% \end{figure}
+
+
+\subsection{Experimental Values for $J$ \score 4}
+\begin{table}[phtb] \label{fig:lab4_q5}
+\begin{center}
+\caption{Experimental values of $J$}
+\begin{tabular}{c|l}\hline \hline
+\cellcolor{lightgray} Trial & \cellcolor{lightgray} Inertia ($\times10^{-4}$ \si{\kg\m\squared}) \\
+\hline
+1 &  \\ \hline
+2 &  \\ \hline
+3 &  \\ \hline
+4 &  \\ \hline
+5 &  \\ \hline
+6 &  \\ \hline
+Average &  \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{Conservation of Energy \score 12}
+(1. Ignoring losses such as friction and applying the conservation of energy law, show that ($K_v=K_{\tau}$) are identical. (\emph{Hint}: electrical power is \emph{voltage}\verb|*|\emph{current} and mechanical power is \emph{torque}\verb|*|\emph{velocity}.); 2. Use unit conversions to show that their units in SI are equivalent. (units are on page 25 of the lab manual))
+% add your discussion here
+
+\section{System Transfer Function \score 10}
+\subsection{Transfer Function $\Omega(s)/V_i(s)$ \score 5}
+(Find the second order transfer function (from part (e) of the prelab). Use the experimental parameter values and compute the pole locations.)
+% add your discussion here
+
+\subsection{Transfer Function $\Omega_{\rm approx}(s)/V_i(s)$ \score 5}
+(Find the first order transfer function approximation of the system when ignoring $L_a$ (set $L_a$ = 0). Compute the pole location.)
+% add your discussion here
+
+\section{Steady-State Response of Non-Linear System \score 5}
+(Compute the steady-state angular velocity $\omega_{\rm ss}$ for a \SI{4}{\volt} input in $V_i$. Include the effect of Coulomb friction (the $c$ term) in your computation.)
+% add your discussion here
+\newline \\[3mm]
+\noindent {\bf \large Attachments}
+\begin{itemize}
+\item Friction torque vs. the angular velocity (to estimate the friction coefficients for positive and negative rotation) (two plots)
+\item Linear region of the six data sets for inductance $L_a$ (one plot)
+\item One of the six sets of the inductance's data, with a linear fit approximation (one plot)
+\item Linear region of the six data sets for the inertia parameter $J$ (one plot)
+\item One of the six sets of inertia data, with a linear fit approximation (one plot)
+\end{itemize}
 
 \end{document}

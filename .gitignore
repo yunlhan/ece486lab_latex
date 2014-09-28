@@ -1,6 +1,7 @@
 *~
 *.aux
 *.log
+*.swp
 
 *.pdf
 !H3DecomposeMaple.pdf
