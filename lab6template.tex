@@ -1,0 +1,205 @@
+% This is the alpha version of lab report template in LaTeX.
+% Originally used by Daniel Whisman (enrolled in ECE 486, Fall 2013)
+% Edited and redesigned by Y\"un L. Han.
+% 2014-11-02
+%
+% It is recommended to use
+%
+% TeXLive under Linux, url: http://tug.org/texlive/
+% MacTex under Mac OS X, url: http://tug.org/mactex/
+% MikTeX under Windows, url: http://miktex.org/
+% For more info about how to use LaTeX (not TeX, TeX is a programming
+% language, however LaTeX is not), see a quick guide from ECE Thesis wiki,
+%
+% https://wiki.cites.illinois.edu/wiki/display/ECEThesisReview/LaTeX+Resources
+%
+% Read the Documentation file ECE LaTeX Guide.pdf down at the bottom
+% of the page. As a starter, you only have to learn briefly how to typeset
+% equations and insert figures and other graphics. As an experienced user,
+% however, you can grab the template and write your report immediately.
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{mathtools} % load AMS maths
+\usepackage{amsmath} % for math spacing
+\usepackage{amssymb} % for math spacing
+\usepackage{colortbl} % colour for table
+\usepackage[table]{xcolor} % define colours
+\usepackage{multirow} % multirow cell in table
+\usepackage{array} % table cell, paragraph column aligned in the middle
+\usepackage[margin=2.5cm]{geometry} % an easy way to change page layout, Thanks to Brady Salz
+\usepackage{siunitx} % use this package to enter SI units, Thanks to Dr. Sean Hubbard
+% \usepackage{framed} % use boxed environment
+\usepackage{hhline} % fix \cline overwitten problem
+\usepackage{colortbl} % colour interacts with \hhline
+% \definecolor{Grey}{gray}{0.85}
+\newcommand{\score}{\hfill \underline{\hspace{0.65cm}}\,/} % for score underline
+\newcommand\RR{\textsuperscript{\textregistered}~} % for registered mark
+
+\begin{document}
+\title{\bf Lab \#6 Report\\{\sc Lead Controller Design}}
+\author{Your Name\\ Section AB\emph{X}\\
+Your Lab Partner's Name\\
+Your TA's name}
+\maketitle
+
+\noindent \fbox{\bf \Large Total: \underline{\hspace{0.65cm}}\,/90}
+
+\section{Effects of Saturation Block \score 10}
+(Discuss the effect of the saturation block in the simulations. Overlay plots for the saturated and plots for the non-saturated cases.)
+% add your discussion here
+
+% uncomment the following to insert your own figures
+% \begin{figure}[phtb]
+% \centering
+% \includegraphics[height=0.88\textheight]{OVERLAID_05V}
+% \caption{Step responses---with and without saturation block for $V_{\rm ss}=0.5\si{\volt}$.}
+% \label{fig:lab6_q1_v05}
+% \end{figure}
+
+% \begin{figure}[phtb]
+% \centering
+% \includegraphics[height=0.88\textheight]{OVERLAID_5V}
+% \caption{Step responses---with and without saturation block for $V_{\rm ss}=5\si{\volt}$.}
+% \label{fig:lab6_q1_v5}
+% \end{figure}
+
+% \begin{figure}[phtb]
+% \centering
+% \includegraphics[height=0.88\textheight]{OVERLAID_50V}
+% \caption{Step responses---with and without saturation block for $V_{\rm ss}=50\si{\volt}$.}
+% \label{fig:lab6_q1_v50}
+% \end{figure}
+
+\section{Motor DC Gain \score 10}
+(Compute the transfer function of the system from the data set obtained from the DSA[system identification]. Then compute the DC gain $K$ of the motor model. You need to include how you solve for $K$. Also compare the computed value with the value obtained in Lab 4 and Prelab 5-a. \emph{Note: First, you need to rewrite the transfer function from the DSA in radians. Remember that the DC gain K obtained from the DSA includes the gains of the tachometer, amplifier and compensator. Hence you need to solve only for $K$.})
+
+\begin{align*}
+   K_{\rm DSA} & =\mbox{\rm {YOUR VALUE}} \\ 
+z_{\rm} \mbox{[\si{\hertz}]} = \mbox{\rm YOUR VALUE},~p_{1\rm} \mbox{[\si{\hertz}]} & =\mbox{\rm YOUR VALUE},~p_{2\rm} \mbox{[\si{\hertz}]} =\mbox{\rm YOUR VALUE}
+\end{align*}
+
+\noindent The transfer function is
+\begin{align*}
+\frac{V_{\rm tach}(s)}{V_{\rm in}(s)} = 
+\frac{K_{\rm DSA}\left( \frac{s[\si{\radian\per\second}]}{2\pi}-z[\si{\hertz}] \right)}{\left(\frac{s[\si{\radian\per\second}]}{2\pi}-p[\si{\hertz}]\right)\left(\frac{s[\si{\radian\per\second}]}{2\pi}-p[\si{\hertz}]\right)} = \mbox{YOUR COMPUTATION}
+\end{align*}
+
+\begin{center}
+\framebox{$K_{\rm lab4} = ~~~~ $, $K_{\rm lab6} = ~~~~$}
+\end{center}
+% add your comparison here
+
+\section{Time Domain Specifications of Real/Simulated Responses of the Low/High DC Gain Compensators \score 30}
+\subsection{Table of $M_p$, $t_r$, $t_s$, and $e_{\rm ss}$ \score 10}
+(Fill out Table~\ref{tbl:lab6_q3_1} below.)
+
+\begin{table}[phbt]\footnotesize 
+% http://texblog.org/2014/05/19/coloring-multi-row-tables-in-latex/
+% http://tex.stackexchange.com/questions/65582/cellcolor-overwrites-table-lines
+% http://tex.stackexchange.com/questions/65604/hhline-adds-white-line-where-no-line-is-intended
+% http://tex.stackexchange.com/questions/65231/cellcolor-overwrites-partial-horizontal-lines-cline
+\begin{center}
+\caption{Real and Simulated Responses for Low and High DC Gain Compensators}
+\label{tbl:lab6_q3_1}
+\begin{tabular}{l|*{7}{m{1.2cm}|}m{1.2cm}} \hline \hline
+\cellcolor{lightgray} & \multicolumn{4}{c|}{\cellcolor{lightgray}Low DC Gain Lead Compensator}  & \multicolumn{4}{c}{\cellcolor{lightgray}High DC Gain Lead Compensator}\\ \hhline{>{\arrayrulecolor{lightgray}}-*{8}{>{\arrayrulecolor{black}}-}} % if \cline used, the \hline will be overwritten by \cellcolor, see the above examples
+\multirow{-2}{*}{\cellcolor{lightgray}}& \cellcolor{lightgray} $M_p$\,[\%] & \cellcolor{lightgray} $t_r$\,[\si{\milli\second}] & \cellcolor{lightgray} $t_s$\,[\si{\milli\second}] & \cellcolor{lightgray} $e_{\rm ss}$\,[\si{\volt}]$^a$ & \cellcolor{lightgray} $M_p$\,[\%] & \cellcolor{lightgray} $t_r$\,[\si{\milli\second}] & \cellcolor{lightgray} $t_s$\,[\si{\milli\second}] & \cellcolor{lightgray} $e_{\rm ss}$\,[\si{\volt}] \\ \hline
+\cellcolor{lightgray} &  & & & & & & & \\
+\multirow{-2}{*}{\cellcolor{lightgray}Actual$^b$} & \multirow{-2}{*}{VALUE}& \multirow{-2}{*}{VALUE}& \multirow{-2}{*}{VALUE}& \multirow{-2}{*}{VALUE}& \multirow{-2}{*}{VALUE}& \multirow{-2}{*}{VALUE}& \multirow{-2}{*}{VALUE}& \multirow{-2}{*}{VALUE}\\ \hline
+\cellcolor{lightgray} &  & & & & & & & \\
+\multirow{-2}{*}{\cellcolor{lightgray}Simulated Lab 4$^c$} & \multirow{-2}{*}{~}& \multirow{-2}{*}{~}& \multirow{-2}{*}{~}& \multirow{-2}{*}{~}& \multirow{-2}{*}{~}& \multirow{-2}{*}{~}& \multirow{-2}{*}{~}& \multirow{-2}{*}{~}\\ \hline
+\cellcolor{lightgray} &  & & & & & & & \\
+\multirow{-2}{*}{\cellcolor{lightgray}Simulated Lab 6$^d$} & \multirow{-2}{*}{~}& \multirow{-2}{*}{~}& \multirow{-2}{*}{~}& \multirow{-2}{*}{~}& \multirow{-2}{*}{~}& \multirow{-2}{*}{~}& \multirow{-2}{*}{~}& \multirow{-2}{*}{~}\\ \hline
+\end{tabular}
+\end{center}
+\footnotesize{$^a$The unit is [\si{\volt}], not [\%];\\
+$^b$ Values calculated from data set obtained in Sections II and III of Lab 6;\\
+$^c$ Values calculated from data set by simulating the closed loop system with both lead controllers and the parameters found in Lab 4;\\
+$^d$ Values calculated from data set by simulating the closed loop system with both lead controllers and the parameters found in Lab 6 from the DSA.
+} 
+\end{table}
+
+\subsection{Discussion of Results in Table~\ref{tbl:lab6_q3_1} \score 10}
+(Compare the specs in Table~\ref{tbl:lab6_q3_1} for low DC gain and high DC gain compensators and discuss the possible differences.)
+% add your discussion here
+
+\subsection{Meeting the Specifications \score 10}
+(Fill out Table~\ref{tbl:lab6_q3_2} below. Did your design meet the specification---$M_p \leqslant 15\%$, $t_r \leqslant 30\si{\milli\second}$?)
+\begin{table}[phbt] 
+\begin{center}
+\caption{Overshoot and Rise Time for Lead Compensators and PD Controller}
+\label{tbl:lab6_q3_2}
+\begin{tabular}{c|*{1}{m{1.2cm}|}m{1.2cm}} \hline \hline
+\cellcolor{lightgray} Experimental Values & \cellcolor{lightgray} $M_p$\,[\%] & \cellcolor{lightgray} $t_r$\,[\si{\milli\second}] \\ \hline
+\cellcolor{lightgray} Low DC Gain Lead Compensator & & \\ \hline
+\cellcolor{lightgray} High DC Gain Lead Compensator & & \\ \hline
+\cellcolor{lightgray} PD Controller$^e$ & & \\ \hline 
+\end{tabular}
+\end{center}
+\footnotesize{$^e$Use the PD controller from Lab 5 with gains designed in Prelab 5-c.}
+\end{table}
+% add your discussion here
+
+
+\section{Bode Plots \score 40}
+\subsection{Bode Plots of $\displaystyle \frac{V_{\rm tach}(s)}{V_{\rm in}(s)}$ \score 10}
+\label{sec:tach_bode}
+(Plot the Bode plots (Magnitude and Phase) in dB and degrees respectively for the empirical data saved in \texttt{fresp.m}. And obtain Bode plots again using the transfer function estimated by the DSA (part II of this report). Overlay both plots. Use \texttt{semilogx} to scale the $x$-axis (frequency). {\bf They should match well}.)
+% insert your overlaid plots 
+
+% uncomment the following to insert your own figure
+% \begin{figure}[phtb]
+% \centering
+% \includegraphics[height=0.88\textheight]{VTACH_VIN}
+% \caption{Overlaid Bode plots of open loop transfer function $V_{\rm tach}(s)/V_{\rm in}(s)$.}
+% \label{fig:lab6_q4_1}
+% \end{figure}
+
+\subsection{Bode Plots of $\displaystyle \frac{V_{\theta}(s)}{V_{\rm in}(s)}$ \score 15}
+\label{sec:pot_bode}
+(Use the relation between Equations 6.2 and 6.3 (on page 57) of Lab Manual to graph the Bode plots for the transfer function $\displaystyle \frac{V_{\theta}(s)}{V_{\rm in}(s)}$ (in dB and degrees) using the parameters identified by the DSA. Use \texttt{bode} command in {\sc Matlab}\RR to obtain magnitude and phase. Then overlay both plots. Follow hints in Lab Manual at the end of Lab 6 and overlay the \emph{bode plot with the data} in \texttt{fresp.m} (after computing $\displaystyle \frac{V_{\theta}(s)}{V_{\rm in}(s)}$). {\bf They should match well}. Find the crossover frequency ($\omega_c$) and phase margin (PM). Do they meet the design specifications from Prelab 6-d?)
+% insert your overlaid plots
+
+% uncomment the following to insert your own figure
+% \begin{figure}[phtb]
+% \centering
+% \includegraphics[height=0.88\textheight]{VTHETA_VIN}
+% \caption{Overlaid Bode plots of open loop transfer function $V_{\theta}(s)/V_{\rm in}(s)$.}
+% \label{fig:lab6_q4_2}
+% \end{figure}
+
+% add your discussion here
+\begin{center}
+\framebox{$\omega_c = ~~~~ \si{\radian\per\second}$, $\mathrm{PM} = ~~~~ \si{\degree}$ from Data Fit in DSA}\\[2pt]
+\framebox{$\omega_c = ~~~~ \si{\radian\per\second}$, $\mathrm{PM} = ~~~~ \si{\degree}$ from data in \texttt{fresp.m}}\\[2pt]
+\framebox{$\omega_c = ~~~~ \si{\radian\per\second}$, $\mathrm{PM} = ~~~~ \si{\degree}$ from specification in Prelab 6-d}
+\end{center}
+
+\subsection{Bode Plots of Closed-Loop $\displaystyle \frac{V_{\theta}(s)}{V_{\rm in}(s)}$ \score 15}
+\label{sec:pot_bode_cl}
+(Use the transfer function from the DSA fit (parameters identified by the DSA) and compute the closed-loop transfer function (assume negative unit feedback). Generate a Bode plot using {\sc Matlab}\RR. Also generate a bode plot for closed-loop transfer function $\displaystyle \frac{V_{\theta}(s)}{V_{\rm in}(s)}$ \emph{based on data set} \texttt{fresp.m}. Then overlay both Bode plots. {\bf They should match well}. What is the closed-loop bandwidth? Is it reasonable? Give the reason why it is reasonable or discuss the possible reasons why it is not.)
+% insert your overlaid plots
+% uncomment the following to insert your own figure
+% \begin{figure}[phtb]
+% \centering
+% \includegraphics[height=0.88\textheight]{VTHETA_VIN_CL}
+% \caption{Overlaid Bode plots of closed-loop transfer function $V_{\theta}(s)/V_{\rm in}(s)$ with unit feedback.}
+% \label{fig:lab6_q4_3}
+% \end{figure}
+% add discussion here
+\newline \\[3mm]
+\noindent {\bf \large Attachments}
+\begin{itemize}
+\item Overlaid responses from saturated and non-saturated cases for $V_{\rm in} =0.5\si{\volt}$, $V_{\rm in} =5\si{\volt}$ and $V_{\rm in} =50\si{\volt}$ (one plot or three subplots)
+\item Overlaid Bode Plots for Section~\ref{sec:tach_bode} for $ \frac{V_{\rm tach}(s)}{V_{\rm in}(s)}$ (one plot)
+\item Overlaid Bode Plots for Section~\ref{sec:pot_bode} for $ \frac{V_{\theta}(s)}{V_{\rm in}(s)}$ (one plot)
+\item Overlaid Bode Plots for Section~\ref{sec:pot_bode_cl} for closed-loop $ \frac{V_{\theta}(s)}{V_{\rm in}(s)}$ (one plot)
+\end{itemize} 
+
+% YOU'RE DONE!!! 
+% ENJOY POST ECE 486 LIFE!!!
+% BEST OF LUCK!!! :)
+
+\end{document}
