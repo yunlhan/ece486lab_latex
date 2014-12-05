@@ -8,11 +8,11 @@
 
 It is recommended to use 
 
-> `TeXLive` under Linux, http://tug.org/texlive
+> `TeXLive` on Linux, http://tug.org/texlive
 
-> `MacTex` under Mac OS X, http://tug.org/mactex
+> `MacTex` on Mac OS X, http://tug.org/mactex
 
-> `MikTeX` under Windows, http://miktex.org
+> `MikTeX` on Windows, http://miktex.org
 
 For more info about how to use LaTeX (not TeX, TeX is a programming language, however LaTeX is not), see a quick guide from ECE Thesis wiki,
 
