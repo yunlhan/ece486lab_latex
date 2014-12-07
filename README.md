@@ -1,8 +1,6 @@
 #ECE 486 Control Systems Lab
 
-<img src="https://github.com/yunlhan/ece486lab_latex/blob/master/newButton.png" alt="NEW LATEX ICON" width="150" height="50">
-
-*Fall 2014*
+<img src="https://github.com/yunlhan/ece486lab_latex/blob/master/newIcon.png" alt="NEW LATEX ICON" width="140" height="35"> *Fall 2014*
 
 ###New Lab Report Template in LaTeX 
 
