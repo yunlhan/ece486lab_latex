@@ -1,6 +1,6 @@
 #ECE 486 Control Systems Lab
 
-![NEW LATEX ICON](https://github.com/yunlhan/ece486lab_latex/blob/master/newButton.png=100x "LaTeX Templates, *NEW*") 
+<img src="https://github.com/yunlhan/ece486lab_latex/blob/master/newButton.png" alt="NEW LATEX ICON" style="width:100;height:33">
 
 *Fall 2014*
 
