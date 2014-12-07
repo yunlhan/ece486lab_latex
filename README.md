@@ -1,6 +1,6 @@
 #ECE 486 Control Systems Lab
 
-<img src="https://github.com/yunlhan/ece486lab_latex/blob/master/newButton.png" alt="NEW LATEX ICON" style="width:100;height:33">
+<img src="https://github.com/yunlhan/ece486lab_latex/blob/master/newButton.png" alt="NEW LATEX ICON" style="width:100;height:33"/>
 
 *Fall 2014*
 
