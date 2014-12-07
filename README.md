@@ -1,6 +1,6 @@
 #ECE 486 Control Systems Lab
 
-*NEW* for Fall 2014
+![NEW LATEX ICON](https://github.com/yunlhan/ece486lab_latex/blob/master/newButton.png "LaTeX Templates, *NEW*") Fall 2014
 
 ###New Lab Report Template in LaTeX 
 
