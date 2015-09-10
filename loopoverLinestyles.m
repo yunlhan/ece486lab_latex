@@ -34,7 +34,7 @@ for i = 1:8
     % plot the graphs with looping line styles
     % mod(i,4)+1 ranges 1 through 4
     % the first applied line style is the 2nd in the lineStyles array
-    % plot(t,y(i,:),char(lineStyles(mod(i,4)+1))) # method #1
+    % plot(t,y(i,:),char(lineStyles(mod(i,4)+1))) % method #1
 
     plot(t,y(i,:),lineStyles{mod(i,4)+1}) % method #2
     % only hold on once
