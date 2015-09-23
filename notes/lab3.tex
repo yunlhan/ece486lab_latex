@@ -1,0 +1,50 @@
+% Dan Whisman's template
+% DO NOT USE IN 486 LAB
+\documentclass{article}
+\usepackage{graphicx}
+\newcommand{\score}{\hfill \underline{\hspace{1cm}}/}
+\title{Lab \#3\\{\sc Digital Simulation}}
+\author{Your Name\\ Section\\
+  Partners: Partner's Name\\
+  TA: TA's name}
+%\renewcommand{\thesection}{\Roman{section}}
+\begin{document}
+\maketitle
+\fbox{\bf \Large Total: \underline{\hspace{1cm}}/45}
+\section{{\sc Results}\score 15}
+\subsection{Plots \score 6}
+See Figures~\ref{ref_resp} and~\ref{dist_resp} for the responses to a unit step as the reference and disturbance, respectively.
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[height=0.4\textheight]{ref_resp.pdf}
+\caption{Reference response of three controllers.}
+\label{ref_resp}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[height=0.4\textheight]{dist_resp.pdf}
+\caption{Disturbance response of three controllers.}
+\label{dist_resp}
+\end{figure}
+
+\subsection{Step Response to $\omega_r$ \score 6}
+%\input{data.tex}
+
+\subsection{Comparison \score 3}
+
+
+\section{{\sc Deriving $e_{ss}$ Components} \score 12}
+
+\section{{\sc $\zeta$ and $\omega_n$ of Controller Three} \score 18}
+
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[height=0.4\textheight]{report_plot.pdf}
+\caption{Pole locations for $0<k_d<0.05$.}
+\label{poles}
+\end{figure}
+
+\end{document}

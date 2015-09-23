@@ -1,0 +1,172 @@
+% Dan Whisman's template
+% DO NOT USE IN 486 LAB
+\documentclass{article}
+\usepackage{graphicx}
+\newcommand{\score}{\hfill \underline{\hspace{1cm}}/}
+\title{Lab \#4\\{\sc Introduction to the DC Motor}}
+\author{Your Name\\ Section\\
+  Partners: Partner's Name\\
+  TA: TA's name}
+%\renewcommand{\thesection}{\Roman{section}}
+\begin{document}
+\maketitle
+\fbox{\bf \Large Total: \underline{\hspace{1cm}}/90}
+
+\section{Calibration of Tachometer \score 5}
+\subsection{Computing the Tachometer Gain \score 3}
+
+
+\subsection{Experimental Parameters for the Tachometer \score 2}
+\begin{center}
+\begin{tabular}{rrrrr}
+$V_i$ (V) & $\Delta t$ (ms) & $V_{\rm tach}$ (v) & $\omega$ (rad/s) & $K_{\rm tach}$ (V\,s/rad) \\
+\hline
+5  &  &  &   &  \\
+10 &  &  &   &   \\
+15 &  &  &   &  
+\end{tabular}
+\end{center}
+The average value of $K_{\rm tach}$ is \,V\,s/rad.
+
+\section{Armature Resistance and Back-EMF \score 10}
+\subsection{Measuring the $R_a$ and Back-EMF \score 4}
+ 
+\subsection{Experimental Values \score 2}
+\begin{center}
+\begin{tabular}{rrrr}
+$V_i$ (V) & $I_{\rm ss-a}$ (A) & $V_{\rm tach}$ (V) & $\omega_{\rm ss}$ (rad/s) \\
+\hline
+5 &   &   &   \\
+6 &   &   &   \\
+7 &   &   &  \\
+8 &   &   &  \\
+9 &   &   &  \\
+10  &   &   & \\
+11  &   &   &  \\
+12  &   &   &  \\
+-5  &  &  &  \\
+-6  &  &  &  \\
+-7  &  &  &   \\
+-8  &  &  &   \\
+-9  &  &  &   \\
+-10 &  &  &   \\
+-11 &  &  &   \\
+-12 &  &  & 
+\end{tabular}
+\end{center}
+\subsection{Experimental Parameters \score 4}
+\begin{center}
+\begin{tabular}{cc}
+Parameter & Value \\
+\hline
+$R_a\,(\Omega)$ &   \\
+$K_V$ (V\,s/rad) &  
+\end{tabular}
+\end{center}
+
+\section{Friction Coefficients \score 10}
+\subsection{Measuring the Coefficients \score 6}
+
+
+The plots of frictional torque vs. angular velocity are shown in Figures~\ref{fig:fp1} and~\ref{fig:fp2}.
+
+\begin{figure}[hptb]
+\centering
+%\includegraphics[width=0.9\linewidth]{fric_plot1.eps}
+\caption{Frictional torque vs. angular velocity for positive $\omega$.}
+\label{fig:fp1}
+\end{figure}
+
+\begin{figure}[hptb]
+\centering
+%\includegraphics[width=0.9\linewidth]{fric_plot2.eps}
+\caption{Frictional torque vs. angular velocity for negative $\omega$.}
+\label{fig:fp2}
+\end{figure}
+
+\subsection{Experimental Values \score 4}
+\begin{center}
+\begin{tabular}{lr|lr}
+\multicolumn{2}{c}{Viscous Coefficient (Nms/rad)} & \multicolumn{2}{c}{Coulomb Coefficient (Nm)} \\
+\hline
+$b^+$ &   &   &   \\
+$b^-$ &   &   &  
+\end{tabular}
+\end{center}
+
+\section{Armature Inductance \score 20}
+\subsection{Procedure for Measuring $R_s$ and $L_a$ \score 14}
+
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[width=0.9\linewidth]{La_plot.eps}
+\caption{Plot of $\log(V)$ vs. $t$. }
+\label{fig:La_plot}
+\end{figure}
+
+
+\subsection{Experimental Parameters \score 6}
+$R_s$ was measured to be   .
+\begin{center}
+\begin{tabular}{crr}
+Trial & $\tau_e$\,(ms) & $L_a$\,(mH) \\
+\hline
+1 &  &  \\
+2 &  &  \\
+3 &  &  \\
+4 &  &  \\
+5 &  &  \\
+6 &  &  \\
+Average &  & 
+\end{tabular}
+\end{center}
+
+\section{Rotor Moment of Inertia \score 18}
+\subsection{Procedure for Measuring $J$ \score 14}
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[width=0.9\linewidth]{iner_plot.eps}
+\caption{Plot of $\log(\omega)$ vs. $t$.  The line of best fit is $\log(\omega) = -0.403t + 6.00$. }
+\label{fig:iner_plot}
+\end{figure}
+
+
+\subsection{Experimental Values for $J$ \score 4}
+\begin{center}
+\begin{tabular}{cr}
+Trial & Inertia ($10^{-4}$kg\,m$^2$) \\
+\hline
+1 &  \\
+2 &  \\
+3 &  \\
+4 &  \\
+5 &  \\
+6 &  \\
+Average & 
+\end{tabular}
+\end{center}
+
+\section{Conservation of Energy \score 12}
+
+
+\section{System Transfer Function \score 10}
+\subsection{Transfer Function $\Omega(s)/V_i(s)$ \score 5}
+The transfer function is given by
+\begin{eqnarray*}
+\frac{\Omega(s)}{V_i(s)} &=& \\
+&=& 
+\end{eqnarray*}
+The poles are located at $s = $ .
+
+\subsection{Transfer Function $\Omega_{\rm approx}(s)/V_i(s)$ \score 5}
+The first order approximation is given by
+\begin{eqnarray*}
+\frac{\Omega_{\rm approx}(s)}{V_i(s)} &=& \\
+&=&.
+\end{eqnarray*}
+The pole is at $s=-$ .
+\section{Steady-State Response of Non-Linear System \score 5}
+
+\end{document}

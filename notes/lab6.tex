@@ -1,0 +1,138 @@
+% Dan Whisman's template
+% DO NOT USE IN 486 LAB
+\documentclass{article}
+\usepackage{graphicx}
+\newcommand{\score}{\hfill \underline{\hspace{1cm}}/}
+\title{Lab \#6\\{\sc Lead Controller Design}}
+\author{Your Name\\ Section\\
+  Partners: Partner's Name\\
+  TA: TA's name}
+\begin{document}
+\maketitle
+\fbox{\bf \Large Total: \underline{\hspace{1cm}}/90}
+\section{{\sc Effects of Saturation Block} \score 10}
+Comparisons of the simulated step responses with and without saturation are shown in Figures~\ref{fig:v05}, \ref{fig:v5}, and~\ref{fig:v50} for a 0.5\,V, 5\,V, and 50\,V input step, respectively.
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[height=0.4\textheight]{part1_05V-crop.pdf}
+\caption{Comparison of step response with and without saturation block for $V_{ss}=0.5\,{\rm V}$.}
+\label{fig:v05}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[height=0.4\textheight]{part1_5V-crop.pdf}
+\caption{Comparison of step response with and without saturation block for $V_{ss}=5\,{\rm V}$.}
+\label{fig:v5}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[height=0.4\textheight]{part1_50V-crop.pdf}
+\caption{Comparison of step response with and without saturation block for $V_{ss}=50\,{\rm V}$.}
+\label{fig:v50}
+\end{figure}
+
+
+\section{{\sc Motor DC Gain} \score 10}
+From the DSA, 
+\[ \begin{array}{cccc}
+K_{\rm DSA}=  & z_{\rm Hz}=  & p_{1\rm Hz}=  & p_{2\rm Hz}= 
+\end{array} \]
+The transfer function is
+$$ \frac{V_{\rm tach}(s)}{V_{\rm in}(s)} = 
+	\frac{K_{\rm DSA}\left( \frac{s}{2\pi}-z_{\rm Hz} \right)}{\left(\frac{s}{2\pi}-p_{1\rm Hz}\right)\left(\frac{s}{2\pi}-p_{2\rm Hz} \right)} = 
+$$
+where $s$ is given in rad/s.
+
+Solving the transfer function for $K$ yields,
+$$ K =  $$
+
+From Lab~4, the DC gain of the motor is 
+$$ K_{\rm Lab4} =  $$
+
+\section{{\sc Response of DC Gain Compensators} \score 30}
+\subsection{Table of $M_p$, $t_r$, $t_s$, and $e_{ss}$ \score 10}
+The step response metrics for the lead compensators are shown in Tables~\ref{tab:srml} and~\ref{tab:srmh}.
+\begin{table}[htb]
+\centering
+\begin{tabular}{lrrrr}
+& $M_p$ (\%) & $t_r$ (ms) & $t_s$ (ms) & $e_{ss}$ (V) \\
+\hline
+Actual & & & & \\
+Prelab 5a & & & &\\
+Lab 6 & & & &
+\end{tabular}
+\caption{Step response metrics for low DC gain lead compensator.}
+\label{tab:srml}
+\end{table}
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{lrrrr}
+& $M_p$ (\%) & $t_r$ (ms) & $t_s$ (ms) & $e_{ss}$ (V) \\
+\hline
+Actual & & & & \\
+Prelab 5a & & & &\\
+Lab 6 & & & &
+\end{tabular}
+\caption{Step response metrics for high DC gain lead compensator.}
+\label{tab:srmh}
+\end{table}
+
+\subsection{Discussion of Results \score 10}
+
+
+\subsection{Meeting the Specifications \score 10}
+\begin{center}
+\begin{tabular}{crr}
+Experimental Values & $M_p$ (\%) & $t_r$ (ms) \\
+\hline
+Low DC Gain Compensator & & \\
+High DC Gain Compensator & & \\
+PD Controller & &
+\end{tabular}
+\end{center}
+
+\section{{\sc Bode Plots} \score 40}
+\subsection{Bode Plots of $\frac{V_{\rm tach}(s)}{V_{\rm in}(s)}$ \score 10}
+The bode plot of the open loop tranfer function for the tachometer is shown in Figure~\ref{fig:bode41}.  
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[height=0.4\textheight]{bode4_1-crop.pdf}
+\caption{Bode plot of open loop transfer function $V_{\rm tach}(s)/V_{\rm in}(s)$.}
+\label{fig:bode41}
+\end{figure}
+
+\subsection{Bode Plots of $\frac{V_{\theta}(s)}{V_{\rm in}(s)}$ \score 15}
+The bode plot of the open loop tranfer function for the potentiometer is shown in Figure~\ref{fig:bode42}.  
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[height=0.4\textheight]{bode4_2-crop.pdf}
+\caption{Bode plot of open loop transfer function $V_{\theta}(s)/V_{\rm in}(s)$.}
+\label{fig:bode42}
+\end{figure}
+
+% Question 2
+% PM =   deg for fit, wc =   rad/s
+% PM =   deg for actual data, wc =  5 rad/s
+
+% Question 3
+% BW =  
+ 
+\subsection{Bode Plots of Closed Loop $\frac{V_{\theta}(s)}{V_{\rm in}(s)}$ \score 15}
+The bode plot of the closed loop tranfer function for the potentiometer is shown in Figure~\ref{fig:bode43}.   
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[height=0.4\textheight]{bode4_3-crop.pdf}
+\caption{Bode plot of closed loop transfer function $V_{\theta}(s)/V_{\rm in}(s)$.}
+\label{fig:bode43}
+\end{figure}
+
+
+
+\end{document}
