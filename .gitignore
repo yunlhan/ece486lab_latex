@@ -6,7 +6,7 @@
 *.pdf
 !H3DecomposeMaple.pdf
 !H3DecomposeMathematica.pdf
-
+!consecutiveNameProb.pdf
 *.html
 *.gz
 *.fdb_latexmk
