@@ -1,5 +1,5 @@
 % test cpu vs gpu performance
-% plot random matrix eigenvalues (a circle) 
+% plot random matrix eigenvalues (a disc) 
 
 % tested on HP Z600 workstation
 % CPU: Intel Xeon X5675 x2
