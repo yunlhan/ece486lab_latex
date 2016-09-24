@@ -25,7 +25,7 @@ clf
 close all
 %% cpu version
 tStart = tic; % start timing
-n = 4e3; % set matrix size nxn
+n = 5e3; % set matrix size nxn
 M = rand(n,n); % generate a random square matrix
 eigM = eig(M); % compute its eigenvalues
 
@@ -36,8 +36,8 @@ tElasped = toc(tStart); % stop timing
 disp(['cpu version time: ',num2str(tElasped)])
 
 figure(1)
-axis([-16 16 -16 16],'equal')
 plot(x(2:end),y(2:end),'marker','o','linestyle','none') 
+axis equal
 % same as 'scatter' but scatter won't overload for gpuArray so have to use
 % 'plot'
 
@@ -52,5 +52,5 @@ tElasped = toc(tStart);
 disp(['gpu version time: ',num2str(tElasped)])
 
 figure(2)
-axis([-16 16 -16 16],'equal')
 plot(xg(2:end),yg(2:end),'marker','o','linestyle','none') % overload plot method
+axis equal
