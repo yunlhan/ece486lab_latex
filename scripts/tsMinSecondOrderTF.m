@@ -34,7 +34,7 @@ end
 figure(1)
 for i = 1:numel(zeta)
     % plot response
-    plot(t{i},y{i})
+    plot(t{i},y{i},'b')
     % hold on for overlaying
     if i == 1
         hold on
