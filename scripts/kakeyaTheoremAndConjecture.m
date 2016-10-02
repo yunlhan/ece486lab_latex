@@ -138,6 +138,8 @@ lineCenter2Edge = line('xdata',[],'ydata',[]); % init new line handle
 % init struct array for movie frames returned by getframe, see output
 % arguments of 'getframe'
 movFrame(numel(theta_b)) = struct('cdata',[],'colormap',[]); 
+% init image frame to save images to GIF
+imgFrame=cell(numel(theta_b),1);
 
 for i = 1:numel(theta_b)    
     
@@ -182,7 +184,27 @@ for i = 1:numel(theta_b)
     % axis equal
     
     movFrame(i) = getframe(gcf);
+    
+    imgFrame{i} = frame2im(movFrame(i));
+       
 end
 
 % show the movie centred at deltoid figure handle
-movie(largeCircleFig,movFrame,3,80) % play the movie 3 time(s) at 80fps
+playNTimes = 3;
+playFPS = 80;
+movie(largeCircleFig,movFrame,playNTimes,playFPS) % play the movie 3 time(s) at 80fps
+% note: movie will play the movie during matlab session, not saving
+% anything.
+
+%% save images to GIF
+% see details at https://www.mathworks.com/help/matlab/ref/imwrite.html
+filename = 'deltoidCurve.gif'; % Specify the output file name
+for idx = 1:numel(theta_b)
+    [A,map] = rgb2ind(imgFrame{idx},256);
+    if idx == 1
+        % delay time 0.0125s = 80FPS
+        imwrite(A,map,filename,'gif','LoopCount',Inf,'DelayTime',.0125); 
+    else
+        imwrite(A,map,filename,'gif','WriteMode','append','DelayTime',.0125);
+    end
+end 
