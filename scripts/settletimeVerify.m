@@ -15,8 +15,8 @@ close all % close all existing windows
 wn = 1;
 % zeta = .69;
 zeta = .69; % test zeta = .7 or .69
-diffCritical = -.5/wn*log(1/400*(1 - zeta^2) ) - ... % approx from below
-               (6.6*zeta - 1.6)/wn;                  % approx from above
+diffCritical = -.5/wn/zeta*log(1/400*(1 - zeta^2) ) - ... % approx from below
+               (6.6*zeta - 1.6)/wn;                       % approx from above
 
 SMALLNUM = 1e-2; % choose a small number 
 
@@ -28,6 +28,11 @@ else
            num2str(diffCritical), ' [s]'])
 end
 
+% comment: difference between calculation of ts from below and above depends on
+% wn as well. If wn is small, the difference is big, hence zeta=.69 is a
+% discontinuity but when wn is big, the difference is small, therefore zeta
+% = .69 may not be a discontinuity
+
 %% parameters in lab 1
 % wn = 1; % radius 1
 % zeta = .7; % boundary point
@@ -36,7 +41,7 @@ disp(['use 2nd order TF w/ wn = 1 and zeta = ',num2str(zeta)])
 %% approximation of ts on p.13 in lab book
 % formulae on p.13
 if (zeta > 0) && (zeta <= .69) % if 0 < zeta <= .69
-    ts = -.5/wn*log(1/400*(1 - zeta^2));
+    ts = -.5/wn/zeta*log(1/400*(1 - zeta^2));
 elseif (zeta > .69) && (zeta < 3) % otherwise zeta < 3
     ts = (6.6*zeta - 1.6)/wn;
 end
