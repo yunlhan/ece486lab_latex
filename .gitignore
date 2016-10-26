@@ -11,3 +11,5 @@
 *.html
 *.gz
 *.fdb_latexmk
+
+timeDomainSpecsApprox.m
