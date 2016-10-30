@@ -1,5 +1,8 @@
+%% How to estimate $K$, $\zeta$ and $\omega_n$ of a second order TF with partial data?
 % estimate the steady state value of the step response of a second order TF
 % with partial data
+
+%%
 
 % 2016-10-24
 % Y\"un Han
@@ -94,6 +97,7 @@ annotation('textarrow',[3.2/4.5  0.63],[6/7 ySample(1)/10.2],'string','')
 xlabel('time [s]')
 ylabel('step response')
 title('collected step response data (t = 0 through 4)')
+
 % use (t1, y1) through (t5, y5) to estimate K, wn and zeta
 % the time domain solution of unit response of second order TF 
 % y(t)=K*(1-1/sqrt(1-zeta^2)*exp(-zeta*wn*t)*sin(wn*sqrt(1-zeta^2)*t+acos(zeta)))
@@ -132,10 +136,15 @@ Navg = mean([N1 N2 N3]);
 % solve for wn and zeta by using N and T
 % we need to call numerical solver fsolve for a system of nonlinear
 % equations
+% note: you need Optimisation Toolbox in order to use fsolve
 x0 = [.5; 2];  % init guess for zeta and wn 
-options = optimoptions('fsolve','Display','iter'); % display iteration output
 % call solver; check funcWnZetaVal, it should be almost 0
 % parmSolve2ndOrderTF is defined below
+if (strcmp(version,'7.14.0.739 (R2012a)'))
+    options = optimset('Display','iter'); % for the older matlab 
+else
+    options = optimoptions('fsolve','Display','iter'); % display iteration output
+end
 [x,funcWnZetaVal] = fsolve(@(x)parmSolve2ndOrderTF(x,Navg,Tavg),x0,options) 
 
 
@@ -143,7 +152,7 @@ zetaEst = x(1) % compare our estimation with the acutal zeta = 0.05
 wnEst = x(2) % compare with the actual wn = 10
 
 % how about K, the steady state value - the most important parameter we
-% care about? K = y1/(1-M) est
+% care about? K = y1/(1-M) etc
 K1 = y1/(1-MCal(zetaEst,wnEst,t1)); % Mcal is defined below
 K2 = y2/(1-MCal(zetaEst,wnEst,t2));
 K3 = y3/(1-MCal(zetaEst,wnEst,t3));
