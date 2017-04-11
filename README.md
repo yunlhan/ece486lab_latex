@@ -1,8 +1,8 @@
-#ECE 486 Control Systems Lab
+# ECE 486 Control Systems Lab
 
-<img src="https://github.com/yunlhan/ece486lab_latex/blob/master/newIcon.png" alt="NEW LATEX ICON" width="90" height="22"> **_Fall_ _2016_**
+<img src="https://github.com/yunlhan/ece486lab_latex/blob/master/newIcon.png" alt="NEW LATEX ICON" width="90" height="22"> **_Spring_ _2017_**
 
-###New Lab Report Template in LaTeX 
+### New Lab Report Template in LaTeX 
 
 > This is the alpha version of lab report template in LaTeX. It was originally used by Daniel Whisman (enrolled in ECE 486, Fall 2013), edited and redesigned by Y&uuml;n L. Han.
 
