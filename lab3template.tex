@@ -1,6 +1,71 @@
-% This is the alpha version of lab report template in LaTeX.
-% Originally used by Daniel Whisman (enrolled in ECE 486, Fall 2013)
-% Edited and redesigned by Y\"un L. Han.
+% LaTeX template for ECE 486 Lab; this template should be used with "report"
+% section in the lab manual
+
+% by Y\"un Han
+% 2017-06-06
+
+% A lot of changes have happened during the last four years. So a major overhaul
+% is needed.
+
+% -------------------
+% Editor + TeX engine
+% -------------------
+% There are many online TeX services which require no local installation of TeX
+% on your computer. Over the years, I have seen students use
+% https://www.overleaf.com https://www.sharelatex.com among others although I
+% have no direct experience of any of them. If you do not want any hassle of
+% having a copy of TeX on your machine, or you don't mind privacy policies of
+% those online services, you can use the online TeX system as well. They will
+% serve you well, at least for our lab report.
+
+% If you are really interested in beautiful print, and efficient editing, you
+% can explore other options. For example, I use local TeX installations on my
+% Linux, Mac and Windows machines. See the original preamble regarding how to
+% choose a proper distribution for different platforms.
+
+% As for editors, I use emacs + AUCTeX. You can enable major modes to handle
+% *.tex files and minor modes to streamline your typesetting. For example, most
+% people will use PDF mode rather than output files in *.ps or *.dvi these
+% days; LaTeX-math-mode will speed up entering common math symbols and Greek
+% letters; auto-complete will do a similar thing; flyspell mode will give you
+% spell check etc.
+
+% As for setting up emacs itself, you can check out Jess Hamrick's github repo
+% https://github.com/jhamrick/emacs. I only enabled auctex, auto-complete,
+% color-them-solarized, helm, helm-descbinds, and nyan-mode. To get these these
+% packages installed, you can use el-get package management for emacs. 
+
+% ------------
+% LaTeX how-to 
+% ------------
+% I use the following
+% https://en.wikibooks.org/wiki/LaTeX
+% https://en.wikibooks.org/wiki/LaTeX/Tips_and_Tricks
+% https://tex.stackexchange.com
+
+% ---------------
+% Working example
+% ---------------
+% I wrote a book (127 pages) based on my lectures notes. You can scan the book
+% and you may find it helpful when you use LaTeX. For example, how to handle
+% cases in equations, how to selectively label questions, advanced graphics,
+% references, just name a few. The book is in available in another repo
+% https://github.com/yunlhan/ENT40days
+
+% -------------
+% Writing guide
+% -------------
+% You may find the Guardian style guide useful,
+% https://www.theguardian.com/guardian-observer-style-guide-a Especially, their
+% guide on "quotation marks" and "commas".
+
+% -----------------------------------------------------------------------------
+
+% original preamble
+%
+% This is the alpha version of lab report template in LaTeX. Inspired by the
+% effort of Daniel Whisman (enrolled in ECE 486, Fall 2013)
+% written by Y\"un L. Han.
 % 2014-09-16
 
 % It is recommended to use
@@ -35,6 +100,14 @@
 \newcommand{\score}{\hfill \underline{\hspace{0.65cm}}\,/} % for score underline
 \newcommand\RR{\textsuperscript{\textregistered}~} % for registered mark
 \begin{document}
+% consider aligning your names like the following
+% ----
+% ************Lab X Report 
+%
+% ************by YOUR NAME
+% ******Lab Partner: HIS/HER NAME
+% ******Lab      TA: Y\"un Han
+% ----
 \title{\bf Lab \#3 Report\\{\sc Digital Simulation of \\ a Closed Loop System}}
 \author{Your Name\\ Section AB\emph{X}\\
 Your Lab Partner's Name\\
@@ -83,7 +156,7 @@ $K_d$  &\multicolumn{2}{c|}{}&\multicolumn{2}{c|}{}&\multicolumn{2}{c}{} \\ \hli
 (Compare $M_p$, $t_r$ and $t_s$ from Prelab with those from Lab. Are they close to each other? Which controllers met the specifications?)
 
 \section{{\sc Deriving $e_{\rm ss}$ Components} \score 12}
-(For the system in Figure 3.1 (in Lab Manual), derive the relationship between steady state error ($e_{\rm ss}= \omega_r - \omega$) and natural frequency $\omega_n$. Consider the error as a function of both $\omega_r$ and $\tau_d$, and model these as step inputs. Since the system is linear, superposition allows the two components to be calculated separately and then summed. Notice that $e_{\rm ss}$ is not the same thing as ``e'' in the block diagram ($e= K_r\omega_r - \omega$, this is the error signal).)
+(For the system in Figure 3.1 in Lab Manual, derive the relationship between steady state error ($e_{\rm ss}= \omega_r - \omega$) and natural frequency $\omega_n$. Consider the error as a function of both $\omega_r$ and $\tau_d$, and model these as step inputs. Since the system is linear, superposition allows the two components to be calculated separately and then summed. Notice that $e_{\rm ss}$ is not the same thing as ``e'' in the block diagram. ($e= K_r\omega_r - \omega$, this is the error signal.))
 \begin{align*}
   \omega_n^2 & = \mbox{\sc as an expression of $K$} \\
   \Omega_r(s) - \Omega(s) & = \mbox{\sc as an expression of $\Omega_r$ and $T_d$}
@@ -102,7 +175,7 @@ $K_d$  &\multicolumn{2}{c|}{}&\multicolumn{2}{c|}{}&\multicolumn{2}{c}{} \\ \hli
 \zeta & = \mbox{\sc as an expression of $K$ and $K_d$} \\  
 \omega_n & = \mbox{\sc as an expression of $K$ and $K_d$}  
 \end{align*}
-\emph{Discussion:} If we increase $K$, what happens to $\zeta$ and $\omega_n$? (and at what rate does $\zeta$ change (\emph{linearly, exponentially, as $K^2$} etc)? How does $\omega_n$ change?) What if we increase $K_d$? What happens to $\zeta$ and $\omega_n$?
+\emph{Discussion}: If we increase $K$, what happens to $\zeta$ and $\omega_n$? And at what rate does $\zeta$ change (\emph{linearly, exponentially, as $K^2$} etc)? How does $\omega_n$ change? What if we increase $K_d$? What happens to $\zeta$ and $\omega_n$?
 % add your discussion here
 
 \subsection{Using these equations, show how the pole locations change as $K_d >0$ increases in value \score 6}
@@ -124,6 +197,7 @@ $K_d$  &\multicolumn{2}{c|}{}&\multicolumn{2}{c|}{}&\multicolumn{2}{c}{} \\ \hli
 \item Plots obtained during lab
 \item Sample response with relevant points for calculating $M_p$ , $t_s$ and $t_r$ marked
 \item Trajectory of poles when $K_d$ varies 
+\item {\sc Matlab} code
 \end{itemize}
 
 \end{document}

@@ -1,6 +1,71 @@
-% This is the alpha version of lab report template in LaTeX.
-% Originally used by Daniel Whisman (enrolled in ECE 486, Fall 2013)
-% Edited and redesigned by Y\"un L. Han.
+% LaTeX template for ECE 486 Lab; this template should be used with "report"
+% section in the lab manual
+
+% by Y\"un Han
+% 2017-06-06
+
+% A lot of changes have happened during the last four years. So a major overhaul
+% is needed.
+
+% -------------------
+% Editor + TeX engine
+% -------------------
+% There are many online TeX services which require no local installation of TeX
+% on your computer. Over the years, I have seen students use
+% https://www.overleaf.com https://www.sharelatex.com among others although I
+% have no direct experience of any of them. If you do not want any hassle of
+% having a copy of TeX on your machine, or you don't mind privacy policies of
+% those online services, you can use the online TeX system as well. They will
+% serve you well, at least for our lab report.
+
+% If you are really interested in beautiful print, and efficient editing, you
+% can explore other options. For example, I use local TeX installations on my
+% Linux, Mac and Windows machines. See the original preamble regarding how to
+% choose a proper distribution for different platforms.
+
+% As for editors, I use emacs + AUCTeX. You can enable major modes to handle
+% *.tex files and minor modes to streamline your typesetting. For example, most
+% people will use PDF mode rather than output files in *.ps or *.dvi these
+% days; LaTeX-math-mode will speed up entering common math symbols and Greek
+% letters; auto-complete will do a similar thing; flyspell mode will give you
+% spell check etc.
+
+% As for setting up emacs itself, you can check out Jess Hamrick's github repo
+% https://github.com/jhamrick/emacs. I only enabled auctex, auto-complete,
+% color-them-solarized, helm, helm-descbinds, and nyan-mode. To get these these
+% packages installed, you can use el-get package management for emacs. 
+
+% ------------
+% LaTeX how-to 
+% ------------
+% I use the following
+% https://en.wikibooks.org/wiki/LaTeX
+% https://en.wikibooks.org/wiki/LaTeX/Tips_and_Tricks
+% https://tex.stackexchange.com
+
+% ---------------
+% Working example
+% ---------------
+% I wrote a book (127 pages) based on my lectures notes. You can scan the book
+% and you may find it helpful when you use LaTeX. For example, how to handle
+% cases in equations, how to selectively label questions, advanced graphics,
+% references, just name a few. The book is in available in another repo
+% https://github.com/yunlhan/ENT40days
+
+% -------------
+% Writing guide
+% -------------
+% You may find the Guardian style guide useful,
+% https://www.theguardian.com/guardian-observer-style-guide-a Especially, their
+% guide on "quotation marks" and "commas".
+
+% -----------------------------------------------------------------------------
+
+% original preamble
+%
+% This is the alpha version of lab report template in LaTeX. Inspired by the
+% effort of Daniel Whisman (enrolled in ECE 486, Fall 2013)
+% written by Y\"un L. Han.
 % 2014-10-09
 %
 % It is recommended to use
@@ -36,6 +101,14 @@
 \newcommand\RR{\textsuperscript{\textregistered}~} % for registered mark
 
 \begin{document}
+% consider aligning your names like the following
+% ----
+% ************Lab X Report 
+%
+% ************by YOUR NAME
+% ******Lab Partner: HIS/HER NAME
+% ******Lab      TA: Y\"un Han
+% ----
 \title{\bf Lab \#5 Report\\{\sc PD Control---Analog Computer and \\ Windows Target}}
 \author{Your Name\\ Section AB\emph{X}\\
 Your Lab Partner's Name\\
@@ -178,7 +251,8 @@ $b^-$\,[\si{\newton\meter\second\per\radian}] & & & \\ \hline
 \newline \\[3mm]
 \noindent {\bf \large Attachments}
 \begin{itemize}
-\item None necessary % (hooray!)
+\item {\sc Matlab} code  
+%\item None necessary % (hooray!)
 \end{itemize}
 \end{document}
 
