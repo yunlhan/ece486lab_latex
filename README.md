@@ -4,7 +4,7 @@
 
 ### New Lab Report Template in LaTeX 
 
-> This is the alpha version of lab report template in LaTeX. It was originally used by Daniel Whisman (enrolled in ECE 486, Fall 2013), edited and redesigned by Y&uuml;n L. Han.
+> LaTeX template for ECE 486 Lab; this template should be used with "report" section in the lab manual. Please read the documentation for details in the preamble of each `*.tex` file. 
 
 It is recommended to use 
 
