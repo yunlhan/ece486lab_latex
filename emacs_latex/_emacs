@@ -120,7 +120,7 @@
 (setq-default fill-column 80)          ; Paragraph filling/wrapping at col 80
 ;;; Need to install 'fill-column-indicator'. It draws a thin rule at col 80
 ;; (require 'fill-column-indicator)    ; Show wrapping rule at col 80
-(auto-fill-mode 1)                     ; Auto wrap at line width set at 80
+(auto-fill-mode 1)                     ; Auto wrap at line width set at col 80
 
 ;;; See http://geosoft.no/development/emacs.html
 (setq default-frame-alist (append (list
@@ -134,7 +134,7 @@
 
 (setq search-highlight           t)    ; Highlight search object
 (setq query-replace-highlight    t)    ; Highlight query object
-(setq mouse-sel-retain-highlight t)    ; Keep mouse high-lightening
+(setq mouse-sel-retain-highlight t)    ; Keep mouse highlighting 
 
 (set-face-background 'region "yellow") ; Set region background color
 (set-background-color        "khaki")  ; Set emacs background color
@@ -145,7 +145,8 @@
 ;;; See https://www.emacswiki.org/emacs/InteractiveSpell
 ;;; and https://lists.gnu.org/archive/html/help-gnu-emacs/2014-04/msg00030.html
 (setenv "LANG" "en_US") ; Needed for Windows. Tested on Win 7/10.
-;;; 'en_US' is the key for 'hunspell' to search in dictionary path.
+;;; 'en_US' is the key for 'hunspell' to search in dictionary path. Dictionaries
+;;; are saved in 'HUNSPELL1323_ROOT/share/hunspell'.
 (setq ispell-local-dictionary "en_US") 
 (setq ispell-local-dictionary-alist '("american"
                                               "[[:alpha:]]"
@@ -302,13 +303,14 @@
 ;;;       not suffer from this problem but things run slower.
 
 ;;; Turn on pdf mode
+;;; See more about 'hooks' with 'lambda' function,
+;;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Hooks.html
 (add-hook 'LaTeX-mode-hook
-  (lambda ()
-  (tex-pdf-mode t)
-  (TeX-source-correlate-mode t)))
+	  (lambda () (tex-pdf-mode t) (TeX-source-correlate-mode t)))
+
 ;;; Set SumatraPDF as PDF viewer
 (setq TeX-view-program-list
-      '(("Sumatra PDF" ("\"~/../SumatraPDF312/SumatraPDF.exe\" -reuse-instance"
+      '(("Sumatra PDF" ("\"c:/emacs_latex/SumatraPDF312/SumatraPDF.exe\" -reuse-instance"
 			(mode-io-correlate " -forward-search %b %n ") " %o"))))
 
 (setq TeX-view-program-selection
