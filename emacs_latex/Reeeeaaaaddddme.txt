@@ -14,7 +14,7 @@ Inside N:\labs\ECE486\ece486_Emacs_LaTeX folder:
 
   Note: Read '_emacs' file in github repo so you can have your own setup.
 
-  https://github.com/yunlhan/ece486lab_latex/emacs_latex/_emacs
+  https://github.com/yunlhan/ece486lab_latex/blob/master/emacs_latex/_emacs
 
 How to use this?
 ----------------
