@@ -85,6 +85,8 @@ Known setup problems
     'SumatraPDF.exe' is in the '_emacs' file (line 313). Win 7 does not have 
     this problem.
 
+    (Fixed. See '_emacs' file, line 316.)
+
 
 ----
 Last updated
