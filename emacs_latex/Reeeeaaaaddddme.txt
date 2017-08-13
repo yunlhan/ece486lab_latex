@@ -75,8 +75,11 @@ Known setup problems
     Depending on where you unpacked 7z package, you might want to hard code the 
 	absolute path for 'emacsclientw.exe'.
 
-(2) On Win 10, similar to problem (1), you might hard code where
-    'SumatraPDF.exe' is in the '_emacs' file (line 313).
+    (Fixed. See 'emacs_launch.bat' file.)
+
+(2) On Win 10, similar to problem (1), you might need to hard code where
+    'SumatraPDF.exe' is in the '_emacs' file (line 313). Win 7 does not have 
+    this problem.
 
 
 ----

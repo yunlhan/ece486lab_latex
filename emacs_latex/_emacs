@@ -48,7 +48,7 @@
 ;;;    Line 'set HOME=%~dp0' forces emacs to save config files under the same
 ;;;    directory as emacs root installation. '%~dp0' expands to a path (p) where
 ;;;    current batch file resides including drive letter (d). Number '0' refers
-;;;    to batch file itself.
+;;;    to batch file itself. (Update: See the lastest 'emacs_launch.bat'.)
 ;;;    
 ;;;  ----> CURRENT FOLDER ./
 ;;;                       ./EMACS25_ROOT/BIN      ----> SUB FOLDERS
@@ -277,10 +277,10 @@
 ;;; |    'Settings -> Options'.                                                |
 ;;; | 3. In 'Set inverse search command-line', enter (with quotes)             |
 ;;; |   +-----------------------------------------------+                      |
-;;; |   | "EMACS_ROOT\bin\emacsclientw.exe" -n +%l "%f" |                      |
+;;; |   | "emacsclientw.exe" -n +%l "%f"                |                      |
 ;;; |   +-----------------------------------------------+                      |
-;;; |    TODO: At the moment I don't know how to pass current directory to     |
-;;; |    SumatraPDF setting, so EMACS_ROOT has to be hard coded, e.g.,         |
+;;; |    TODO (fixed): At the moment I don't know how to pass current directory|
+;;; |    to SumatraPDF setting, so EMACS_ROOT has to be hard coded, e.g.,      |
 ;;; |    'C:\path\to\emacs' (local drive) or 'U:\path\to\emacs' (EWS network   |
 ;;; |     drive).                                                              |
 ;;; | 4. Also go to 'Settings -> Advanced Options' and set                     |
@@ -308,9 +308,9 @@
 (add-hook 'LaTeX-mode-hook
 	  (lambda () (tex-pdf-mode t) (TeX-source-correlate-mode t)))
 
-;;; Set SumatraPDF as PDF viewer
+;;; Set SumatraPDF as PDF viewer. See known problems in 'Reeeeaaaaddddme.txt'
 (setq TeX-view-program-list
-      '(("Sumatra PDF" ("\"c:/emacs_latex/SumatraPDF312/SumatraPDF.exe\" -reuse-instance"
+      '(("Sumatra PDF" ("\"~/../SumatraPDF312/SumatraPDF.exe\" -reuse-instance"
 			(mode-io-correlate " -forward-search %b %n ") " %o"))))
 
 (setq TeX-view-program-selection
