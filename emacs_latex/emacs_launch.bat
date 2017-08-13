@@ -24,5 +24,9 @@ echo Shortcut to .\bin\emacsclientw.exe has been created.
 
 rem Set emacs HOME as current directory
 set HOME=%~dp0
+rem Add .\bin (emacs) and ..\SumatraPDF312 to PATH
+set PATH=%~dp0bin;%~dp0..\SumatraPDF312;%PATH%
+rem Add ..\miktex29\texmfs\install\miktex\bin to PATH
+set PATH=%~dp0..\miktex29\texmfs\install\miktex\bin;%PATH%
 rem Launch emacs. Note '%*' for situations where input args are present
 "%~dp0bin\runemacs.exe" %*
