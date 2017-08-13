@@ -39,6 +39,10 @@ How to use this?
 	  |
 	  +--> https://indy.fulgan.com/SSL/
 
+    In case public key has been tampered, it is posted here
+
+    https://chipnotized.org/ref.html#pub_key
+
 (2) Unpack 'emacs_latex.7z'
 
     You might need 7-Zip from
