@@ -48,7 +48,7 @@
 ;;;    Line 'set HOME=%~dp0' forces emacs to save config files under the same
 ;;;    directory as emacs root installation. '%~dp0' expands to a path (p) where
 ;;;    current batch file resides including drive letter (d). Number '0' refers
-;;;    to batch file itself. (Update: See the lastest 'emacs_launch.bat'.)
+;;;    to batch file itself. (Update: See the latest 'emacs_launch.bat'.)
 ;;;    
 ;;;  ----> CURRENT FOLDER ./
 ;;;                       ./EMACS25_ROOT/BIN      ----> SUB FOLDERS
