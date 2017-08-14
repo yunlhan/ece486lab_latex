@@ -4,7 +4,7 @@ setlocal EnableDelayedExpansion
 
 rem This is Windows *.bat file for launching portable emacs
 rem by Yun Han@ECE 486 Lab
-rem 2017-08-11
+rem 2017-08-13
 
 rem Create a shortcut to .\bin\emacsclientw.exe in SumatraPDF folder
 rem for inverse search

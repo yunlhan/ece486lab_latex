@@ -312,7 +312,7 @@
 
 ;;; Set SumatraPDF as PDF viewer. See known problems in 'Reeeeaaaaddddme.txt'
 (setq TeX-view-program-list
-      ;;'(("Sumatra PDF" ("\"~/../SumatraPDF312/SumatraPDF.exe\" -reuse-instance"
+      ;; '(("Sumatra PDF" ("\"~/../SumatraPDF312/SumatraPDF.exe\" -reuse-instance"
       '(("Sumatra PDF" ("SumatraPDF -reuse-instance"                  
 			(mode-io-correlate " -forward-search %b %n ") " %o"))))
 ;;; (Fixed) 'SumatraPDF' is in the path, no need to provide path for *.exe
