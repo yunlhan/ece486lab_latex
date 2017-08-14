@@ -28,6 +28,8 @@ Read the Documentation file ECE LaTeX Guide.pdf down at the bottom of the page. 
 
 Emacs for Windows has evolved with giant leaps over the years. The portable set-up has never been easier!
 
+(**Note**: You can also grab the whole set-up from `N:\labs\ECE486\ece486_Emacs_LaTeX` on lab computers. It is already set up there.)
+
 1. Download `emacs` from [https://ftp.gnu.org/gnu/emacs/windows/](https://ftp.gnu.org/gnu/emacs/windows/). The latest version `emacs-25.2` is what we use in lab.
 
    (**Note**: You can also download `emacs-deps` for Windows and unpack them over `EMACS_ROOT` directory structure. These dependencies provide extra capabilities to emacs, e.g., `gnutls` for secure connections over the internet. We didn't include them in lab set-up.) 
@@ -53,5 +55,3 @@ Emacs for Windows has evolved with giant leaps over the years. The portable set-
  6. Copy `_emacs` and `emacs_launch.bat` under `emacs_latex` from this repo  to `EMACS_ROOT`. Detailed documentation is inside `_emacs`.
  
  7. Start emacs with `emacs_launch.bat`. Enjoy!
- 
-    (**Note**: You can also grab this from `N:\labs\ECE486\ece486_Emacs_LaTeX` on lab computers. It is already set up there.)
