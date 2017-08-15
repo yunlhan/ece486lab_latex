@@ -39,7 +39,7 @@ Emacs for Windows has evolved with giant leaps over the years. The portable set-
 
 4. Download `sumatraPDF-portable` from [https://www.sumatrapdfreader.org/download-free-pdf-viewer.html](https://www.sumatrapdfreader.org/download-free-pdf-viewer.html).
 
-5. Unpack them anywhere you have the write privilege (This means you can use this set-up from USB a flash drive!). Keep the folder structure like below
+5. Unpack them anywhere you have the write privilege (This means you can use this set-up from a USB flash drive!). Keep the folder structure like below
 
     ``` 
     folder where you unpack everything --+-- emacs25
