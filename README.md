@@ -1,10 +1,9 @@
 # ECE 486 Control Systems Lab 
 
-## <img src="https://github.com/yunlhan/ece486lab_latex/blob/master/newIcon.png" alt="NEW LATEX ICON" width="135" height="40"/> + <img src="http://cvs.savannah.gnu.org/viewvc/*checkout*/emacs/emacs/etc/images/icons/hicolor/48x48/apps/emacs.png" alt="EMACS ICON" witdh="40" height="40"/>
-
+### New Lab Report Template in LaTeX 
 **_Fall_ _2017_** 
 
-### New Lab Report Template in LaTeX 
+<img src="https://github.com/yunlhan/ece486lab_latex/blob/master/newIcon.png" alt="NEW LATEX ICON" width="135" height="40"/> <img src="http://www.vplus.org/android-chrome-512x512.png" alt="PLUS SIGN" witdh="40" height="40"/> <img src="http://cvs.savannah.gnu.org/viewvc/*checkout*/emacs/emacs/etc/images/icons/hicolor/48x48/apps/emacs.png" alt="EMACS ICON" witdh="40" height="40"/>
 
 > LaTeX template for ECE 486 Lab; this template should be used with "report" section in the lab manual. Please read the documentation for details in the preamble of each `*.tex` file. 
 
@@ -26,7 +25,7 @@ Read the Documentation file ECE LaTeX Guide.pdf down at the bottom of the page. 
 
 ### Emacs + LaTeX Portable Set-up (for Windows&reg;) 
 
-Emacs for Windows has evolved with giant leaps over the years. The portable set-up has never been easier!
+Emacs for Windows has evolved with giant leaps over the years. The portable set-up couldn't be easier!
 
 (**Note**: You can also grab the whole set-up from `N:\labs\ECE486\ece486_Emacs_LaTeX` on lab computers. It is already set up there.)
 
