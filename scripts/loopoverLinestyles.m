@@ -6,14 +6,14 @@
 % ECE 486 Lab 1
 
 %% 
-clear % clear values of variables in workspace
-clc % clear messages in the command window
-clf % clear existing figures 
+clear     % clear values of variables in workspace
+clc       % clear messages in the command window
+clf       % clear existing figures 
 close all % close all existing windows; w/o 'all', only close the latest
 
 %% get 8 different graphs, which is not important
-t = linspace(0,10,101); % generate time array
-y = zeros(8,length(t)); % init y array
+t = linspace(0,10,101);  % generate time array
+y = zeros(8,length(t));  % init y array
 for i = 1:8
     y(i,:) = sin(i/8*t); % each row of y is y(t)
 end
