@@ -15,7 +15,7 @@ function dummyFunction
 % as preview in file explorer
 
 clear % clear var values in workspace
-clc % clear messages in command window
+clc   % clear messages in command window
 
 % call another function in the same file
 [m, n] = dummyFunction2
@@ -25,7 +25,7 @@ end % you can comment it out
 %% nested function
 
 % () were omitted in dummyFunction since there are no input arguments, []
-% were also omitted since there are no output arguments
+% can also be omitted if there are no output arguments
 
 function [a, b] = dummyFunction2() 
     a = 1;
@@ -33,8 +33,8 @@ function [a, b] = dummyFunction2()
     disp('hello from a dummy function2') 
 end % you can comment it out
 
-% Problem 1: run this file, why 'this is a dummy function' comes BEFORE m, n
-% values displayed in command window?
+% Problem 1: run this file, why 'hello from a dummy function2' comes BEFORE
+% m, n values displayed in command window?
 
 % Problem 2: go to PUBLISH tab and try 'publish' button with this snippet.
 % Can you format the code with proper table of contents, headlines and 

@@ -43,7 +43,7 @@ How to use this?
 	 # decode signature 
     	 >openssl.exe base64 -d -in <sig_sha256> -out <tmp_sign.sha256>
          # verify signature
-	 >openssl.exe dgst -sha256 -verify <pub_key> -signature <tmp_sing.sha256>
+	 >openssl.exe dgst -sha256 -verify <pub_key> -signature <tmp_sign.sha256>
           emacs_latex.7z
 
     (1.3) You should see 'Verified OK' if the package is intact.
