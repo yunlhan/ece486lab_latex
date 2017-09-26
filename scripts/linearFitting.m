@@ -4,7 +4,7 @@
 % Y\"un Han
 % ECE 486 Lab 4
 
-%% preamble 
+%% preamble
 % lab 4 - digital simulation of a closed loop system
 % by me and partner 
 % today's date 
