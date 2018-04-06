@@ -77,7 +77,7 @@ plot(t, log(vss - v))
 % e.g., tStrt = 3.5, and end point tEnd = 9.5. but we don't know their 
 % indices in the array yet, so we need to use find() command
 
-strtIdx = find(t > 3.5, 1, 'first'); % c.f. Lab 0 script
+strtIdx = find(t > 3.5, 1, 'first'); % cf. Lab 0 script
 endIdx  = find(t > 9.5, 1, 'first'); 
 
 % supposedly we get the linear region already. to verify, extract linear 

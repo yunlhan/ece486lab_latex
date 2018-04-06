@@ -1,7 +1,7 @@
 % numerical evidence of the image of small semi circle used to avoid poles
 % on the imag axis under G(s) is also a circle (and why at the end)
 
-% 2017-04-05
+% 2018-04-05
 % Y\"un Han
 % ECE 486 Midterm 2
 
@@ -11,7 +11,8 @@ clc       % clear messages in the command window
 clf       % clear existing figures 
 close all % close all existing windows; w/o 'all', only close the latest
 
-%% image of an r-circle under proper rational functions G(s) (transfer function)
+%% image of an r-circle under proper rational functions G(s) (transfer
+%% function)
 % Question: Is the image also a circle? 
 r = 1e-4;                       % r < 1 (try r > 1 also, wont give images as circles)
 theta = 0:0.001:2*pi;           % complex s = re^(i*theta) in polar form
