@@ -21,28 +21,36 @@ circPointsY = r*sin(theta);     % imag part
 figure(100)
 plot(circPointsX,circPointsY)
 
-GsPoints = RationalG(circPointsX,circPointsY); % generate the image G(X+iY)
+[GsPoints, MsPoints] = RationalG(circPointsX,circPointsY); % generate the image G(X+iY) M(X+iY)
 GsPointsX = real(GsPoints);
 GsPointsY = imag(GsPoints);
+MsPointsX = real(MsPoints);
+MsPointsY = imag(MsPoints);
+
 figure(101)
-scatter(GsPointsX,GsPointsY)
+scatter(GsPointsX,GsPointsY,'r')
+hold on
+scatter(MsPointsX,MsPointsY,'b*')
 axis('equal')
 
-function Gs = RationalG(x, y)
+function [Gs,Ms] = RationalG(x, y)
     % G(s) = b(s)/a(s)
     % G(s) = (b3*s^3 + b2*s^2 + b1*s + b0)/(a4*s^4 + a3*s^3 + a2*s^2 + a1*s + a0)
     b3 = 1;
     b2 = 2;
     b1 = 3;
-    b0 = 1;
+    b0 = 6*1i;
     a4 = 1;
     a3 = 0;
     a2 = 5+1i;
-    a1 = 0;
+    a1 = 3;
     a0 = 1;
 
     s = x+y*1i;
+    % compute the image under G(s)
     Gs = (b3*s.^3 + b2*s.^2 + b1*s + b0)./(a4*s.^4 + a3*s.^3 + a2*s.^2 + a1*s + a0);
+    % compute the image under Mobius transform M(s)
+    Ms = (b1*s + b0)./(a1*s + a0);
 end
 
 % comment: when this r-circle is small enough, i.e., r << 1, higher order
