@@ -1,6 +1,8 @@
-**There will be no more updates on github since GITHUB SOLD THEMSELVES OUT TO MICRO$OFT.** (04.06.2018)
+**There will be no more updates on github since GITHUB SOLD THEMSELVES OUT TO MICRO$OFT.** (04.06.2018) 
 
 -Yün 
+
+See [here](https://chipnotized.org/winematex.html) for updates.
 
 ---
 
