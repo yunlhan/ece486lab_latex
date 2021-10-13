@@ -1,8 +1,9 @@
 **There will be no more updates on github since GITHUB SOLD THEMSELVES OUT TO MICRO$OFT.** (04.06.2018) 
+(However, current 486 students are welcome to send me comments and contribute to this repo. Thanks! (12.10.2021)) 
 
 -Yün 
 
-See [here](https://chipnotized.org/winematex.html) for updates.
+See [here](https://chipnotized.org:9443/winematex.html) for updates.
 
 ---
 
